@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alphabet">Алфавит</string>
+    <string name="black">Черный</string>
+    <string name="blue">Синий</string>
+    <string name="brown">Коричневый</string>
+    <string name="cyan">Голубой</string>
+    <string name="green">Зеленый</string>
+    <string name="logic_of_colors">Логика цвета</string>
+    <string name="orange">Оранжевый</string>
+    <string name="pink">Розовый</string>
+    <string name="purple">Фиолетовый</string>
+    <string name="rainbow">Радуга</string>
+    <string name="red">Красный</string>
+    <string name="yellow">Желтый</string>
+    <string name="grey">Серый</string>
+    <string name="dialog_title">Выбор цвета</string>
+    <string name="colors_not_set">Нужно установить все цвета</string>
+</resources>

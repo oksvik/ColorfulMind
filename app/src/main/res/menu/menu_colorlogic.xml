@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_action_settings"
+
+        android:title="Game level"
+        app:showAsAction="never">
+        <menu>
+            <!-- menu group -->
+            <group
+                android:id="@+id/group_logic_level"
+                android:checkableBehavior="single"
+                >
+                <item
+                    android:id="@+id/menu_level_easy"
+                    android:title="easy" />
+                <item
+                    android:id="@+id/menu_level_middle"
+                    android:title="middle" />
+                <item
+                    android:id="@+id/menu_level_hard"
+                    android:title="hard" />
+                <item
+                    android:id="@+id/menu_level_veryhard"
+                    android:title="very hard" />
+                <item
+                    android:id="@+id/menu_level_crazy"
+                    android:title="crazy" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_duplicate"
+        android:title="Duplication"
+        android:checkable="true"
+        />
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/ic_action_help"
+        android:title="Help"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="yellow">Gelb</string>
+    <string name="blue">Blau</string>
+    <string name="red">Rot</string>
+    <string name="black">Schwarz</string>
+    <string name="brown">Braun</string>
+    <string name="cyan">Lichtblau</string>
+    <string name="green">Grün</string>
+    <string name="orange">Orange</string>
+    <string name="pink">Rosa</string>
+    <string name="purple">Violett</string>
+    <string name="rainbow">Regenbogen</string>
+    <string name="alphabet">Alphabet</string>
+    <string name="logic_of_colors">Logik der Farben</string>
+    <string name="grey">Grau</string>
+</resources>

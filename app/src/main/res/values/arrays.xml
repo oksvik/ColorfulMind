@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="colors_name_array">
+        <item>@string/red</item>
+        <item>@string/orange</item>
+        <item>@string/yellow</item>
+        <item>@string/green</item>
+        <item>@string/blue</item>
+        <item>@string/purple</item>
+        <item>@string/black</item>
+        <item>@string/pink</item>
+        <item>@string/grey</item>
+        <item>@string/brown</item>
+        <item>@string/cyan</item>
+    </array>
+
+    <array name="colors_array">
+        <item>@color/red</item>
+        <item>@color/orange</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+        <item>@color/blue</item>
+        <item>@color/purple</item>
+        <item>@color/black</item>
+        <item>@color/pink</item>
+        <item>@color/grey</item>
+        <item>@color/brown</item>
+        <item>@color/cyan</item>
+    </array>
+
+    <array name="logic_colors_array">
+        <item>@color/red</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+        <item>@color/blue</item>
+        <item>@color/purple</item>
+        <item>@color/cyan</item>
+    </array>
+
+    <array name="logic_colors_array_big">
+        <item>@color/red</item>
+        <item>@color/orange</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+        <item>@color/blue</item>
+        <item>@color/purple</item>
+        <item>@color/cyan</item>
+        <item>@color/brown</item>
+     </array>
+
+    <array name="logic_colors_array_crazy">
+        <item>@color/red</item>
+        <item>@color/orange</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+        <item>@color/blue</item>
+        <item>@color/purple</item>
+        <item>@color/cyan</item>
+        <item>@color/brown</item>
+        <item>@color/grey</item>
+        <item>@color/black</item>
+    </array>
+    
+    <array name="spinner_entries_array">
+        <item>@string/alphabet</item>
+        <item>@string/numbers</item>
+        <item>@string/rainbow</item>
+    </array>
+</resources>

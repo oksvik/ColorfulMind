@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name" translatable="false">Colorful Mind</string>
+    <string name="rainbow">Rainbow</string>
+    <string name="alphabet">Alphabet</string>
+    <string name="numbers">Numbers</string>
+
+    <string name="logic_of_colors">Logic of colors</string>
+
+    <string name="red">Red</string>
+    <string name="orange">Orange</string>
+    <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="purple">Purple</string>
+    <string name="black">Black</string>
+    <string name="pink">Pink</string>
+    <string name="grey">Grey</string>
+    <string name="brown">Brown</string>
+    <string name="cyan">Cyan</string>
+
+
+    <string name="dialog_title">Pick the color</string>
+    <string name="colors_not_set">You should set all colors</string>
+<!--
+    <string-array name="spinner_entries_array">
+        <item>@string/alphabet</item>
+        <item>@string/numbers</item>
+        <item>@string/rainbow</item>
+    </string-array>
+-->
+
+</resources>

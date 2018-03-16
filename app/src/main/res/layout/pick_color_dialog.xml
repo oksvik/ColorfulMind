@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/btnRedColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnOrangeColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/buttonshape" />
+
+    <ImageButton
+        android:id="@+id/btnOrangeColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/orange"
+        app:layout_constraintEnd_toStartOf="@+id/btnYellowColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnRedColor"
+        app:layout_constraintTop_toTopOf="@+id/btnRedColor"
+        app:srcCompat="@drawable/buttonshape"
+        />
+
+    <ImageButton
+        android:id="@+id/btnYellowColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/yellow"
+        app:layout_constraintEnd_toStartOf="@+id/btnGreenColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnOrangeColor"
+        app:layout_constraintTop_toTopOf="@+id/btnOrangeColor"
+        app:srcCompat="@drawable/buttonshape" />
+
+    <ImageButton
+        android:id="@+id/btnGreenColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/green"
+        app:layout_constraintEnd_toStartOf="@+id/btnBlueColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnYellowColor"
+        app:layout_constraintTop_toTopOf="@+id/btnYellowColor"
+        app:srcCompat="@drawable/buttonshape" />
+
+    <ImageButton
+        android:id="@+id/btnBlueColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toStartOf="@+id/btnPurpleColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnGreenColor"
+        app:layout_constraintTop_toTopOf="@+id/btnGreenColor"
+        app:srcCompat="@drawable/buttonshape" />
+
+    <ImageButton
+        android:id="@+id/btnPurpleColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/purple"
+        app:layout_constraintEnd_toStartOf="@+id/btnCyanColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnBlueColor"
+        app:layout_constraintTop_toTopOf="@+id/btnBlueColor"
+        app:srcCompat="@drawable/buttonshape" />
+
+    <ImageButton
+        android:id="@+id/btnCyanColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/cyan"
+        app:layout_constraintEnd_toStartOf="@id/btnBrownColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnPurpleColor"
+        app:layout_constraintTop_toTopOf="@+id/btnPurpleColor"
+        app:srcCompat="@drawable/buttonshape" />
+
+    <ImageButton
+        android:id="@+id/btnBrownColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/brown"
+        app:layout_constraintEnd_toStartOf="@id/btnGreyColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCyanColor"
+        app:layout_constraintTop_toTopOf="@+id/btnCyanColor"
+        app:srcCompat="@drawable/buttonshape" />
+
+    <ImageButton
+        android:id="@+id/btnGreyColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toStartOf="@id/btnBlackColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnBrownColor"
+        app:layout_constraintTop_toTopOf="@+id/btnBrownColor"
+        app:srcCompat="@drawable/buttonshape" />
+
+    <ImageButton
+        android:id="@+id/btnBlackColor"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnGreyColor"
+        app:layout_constraintTop_toTopOf="@+id/btnGreyColor"
+        app:srcCompat="@drawable/buttonshape"
+        />
+</android.support.constraint.ConstraintLayout>
