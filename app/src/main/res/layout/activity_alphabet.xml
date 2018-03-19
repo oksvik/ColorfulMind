@@ -63,32 +63,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="8dp"
         android:dropDownSelector="@color/colorPrimaryLight"
         android:entries="@array/spinner_entries_array"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/guidelineTopMargin" />
 
     <SeekBar
-        android:id="@+id/seekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="248dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="24dp"
-        android:max="5"
-        android:progress="3"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="248dp"
+        android:id="@+id/speedSeekBar"
+        android:layout_width="0dp"
         android:layout_height="26dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <TextView
         android:id="@+id/textViewRainbow"
@@ -104,10 +96,11 @@
         app:layout_constraintVertical_bias="0.522" />
 
     <TextView
-        android:id="@+id/textViewLetter1"
+        android:id="@+id/textViewLetter0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
+        android:tag="0"
+        android:text="0"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
         app:layout_constraintTop_toBottomOf="@+id/guideline19" />
@@ -119,13 +112,14 @@
         android:text="RLB1"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLetter1" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLetter0" />
 
     <TextView
-        android:id="@+id/textViewLetter2"
+        android:id="@+id/textViewLetter1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2"
+        android:tag="1"
+        android:text="1"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/guideline19" />
@@ -137,13 +131,14 @@
         android:text="RLB2"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLetter2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLetter1" />
 
     <TextView
-        android:id="@+id/textViewLetter3"
+        android:id="@+id/textViewLetter2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
+        android:tag="2"
+        android:text="2"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
         app:layout_constraintTop_toTopOf="@+id/guideline20" />
@@ -155,14 +150,14 @@
         android:text="RLB3"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLetter3" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLetter2" />
 
     <TextView
-        android:id="@+id/textViewLetter4"
+        android:id="@+id/textViewLetter3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="4"
+        android:tag="3"
+        android:text="3"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/guideline20" />
@@ -174,7 +169,7 @@
         android:text="RLB4"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLetter4" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLetter3" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline17"
@@ -203,5 +198,27 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.7048093" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Type of the game"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopMargin" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:paddingRight="20dp"
+        android:text="Speed"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </android.support.constraint.ConstraintLayout>

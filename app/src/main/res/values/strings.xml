@@ -21,12 +21,9 @@
 
     <string name="dialog_title">Pick the color</string>
     <string name="colors_not_set">You should set all colors</string>
-<!--
-    <string-array name="spinner_entries_array">
-        <item>@string/alphabet</item>
-        <item>@string/numbers</item>
-        <item>@string/rainbow</item>
-    </string-array>
--->
+
+    <string name="right">R</string>
+    <string name="left">L</string>
+    <string name="both">B</string>
 
 </resources>

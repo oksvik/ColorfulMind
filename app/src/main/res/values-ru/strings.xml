@@ -16,4 +16,8 @@
     <string name="grey">Серый</string>
     <string name="dialog_title">Выбор цвета</string>
     <string name="colors_not_set">Нужно установить все цвета</string>
+    <string name="right">П</string>
+    <string name="left">Л</string>
+    <string name="both">О</string>
+    <string name="numbers">Числа</string>
 </resources>

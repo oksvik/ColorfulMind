@@ -12,6 +12,7 @@
         <item>@string/grey</item>
         <item>@string/brown</item>
         <item>@string/cyan</item>
+        <item>@string/rainbow</item>
     </array>
 
     <array name="colors_array">
@@ -65,5 +66,11 @@
         <item>@string/alphabet</item>
         <item>@string/numbers</item>
         <item>@string/rainbow</item>
+    </array>
+
+    <array name="hands_array">
+        <item>@string/right</item>
+        <item>@string/left</item>
+        <item>@string/both</item>
     </array>
 </resources>
