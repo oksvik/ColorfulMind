@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_rainbow1">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <TextView
+            android:id="@+id/textViewAlphabetHelp1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/alphabet_help1"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toTopOf="@+id/guideline14"
+            tools:text="help1" />
+
+        <TextView
+            android:id="@+id/textViewAlphabetHelp2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/alphabet"
+            android:textColor="#311B92"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAlphabetHelp1"
+            tools:text="help2" />
+
+        <TextView
+            android:id="@+id/textViewAlphabetHelp3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/alphabet_help2"
+            android:textColor="#4527A0"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAlphabetHelp2"
+            tools:text="help3" />
+
+        <TextView
+            android:id="@+id/textViewAlphabetHelp4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/numbers"
+            android:textColor="#4527A0"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAlphabetHelp3"
+            tools:text="help4" />
+
+        <TextView
+            android:id="@+id/textViewAlphabetHelp5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/alphabet_help3"
+            android:textColor="#4527A0"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAlphabetHelp4"
+            tools:text="help5" />
+
+        <TextView
+            android:id="@+id/textViewAlphabetHelp6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/rainbow"
+            android:textColor="#4527A0"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAlphabetHelp5"
+            tools:text="help6" />
+
+        <TextView
+            android:id="@+id/textViewAlphabetHelp7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/alphabet_help4"
+            android:textColor="#4527A0"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAlphabetHelp6"
+            tools:text="help7" />
+
+        <TextView
+            android:id="@+id/textViewAlphabetHelp8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/alphabet_help5"
+            android:textColor="#4527A0"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAlphabetHelp7"
+            tools:text="help8" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

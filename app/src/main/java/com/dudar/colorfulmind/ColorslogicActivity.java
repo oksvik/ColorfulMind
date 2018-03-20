@@ -53,8 +53,8 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     static final String GAME_LEVEL_KEY = "color_logic_game_level";
     static final String GAME_DUPLICATION_KEY = "color_logic_game_duplication";
 
-    static final int MENU_ITEM_GAME_LEVEL = 0;
-    static final int MENU_ITEM_DUPLICATION = 1;
+    static final int MENU_ITEM_GAME_LEVEL = 1;
+    static final int MENU_ITEM_DUPLICATION = 2;
 
     int gameLevel;
     int numberOfColors;

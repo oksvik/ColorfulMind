@@ -61,4 +61,12 @@
     <string name="letter30">Q</string>
     <string name="letter31">W</string>
 
+    <string name="help" translatable="false">Help</string>
+
+    <string name="alphabet_help1">We all know that training is necessary for health and well-being. While doing sports or just warm-ups, we improve our bodies, becoming stronger and more enduring. In the same way, our brains need training for full-time work. And for sure, you have repeatedly heard how useful various puzzles and conundrums are to children and adults. There is even evidence that solving crosswords, sudoku and other logical puzzles protects from age-related brain diseases and allows you to keep your brain in good condition.</string>
+    <string name="alphabet_help2">Invented by John Grinder, the founder of neuro-linguistic programming, develops your mental abilities in an exciting game form. It’s a program that displays two randomly selected letters of the alphabet on the screen during a given interval of time. The upper letter can be any letter and the player must say it aloud. The lower letter can only be "L", "R" or "B". When "L" appears, the player should raise his left hand, "R" - the right hand, "B" - both.</string>
+    <string name="alphabet_help3">This game is similar to Alphabet;  just call the numbers and execute commands for the hands, raising your hands depending on the letter that appears.</string>
+    <string name="alphabet_help4">The game Rainbow was invented by Russian coaches. In this game, the player is presented with a random sequence of words indicating colors - "red", "green", etc.; however, the color of the word may or may not coincide with the meaning of the word. The player should say the color of the word. But when the player sees the word “Rainbow”, they have to say this particular word instead of the color in which it is written. This prevents the player from finding strategies to see just words’ colors without reading them.</string>
+    <string name="alphabet_help5">The speed of displaying letters/words can be adjusted by the player for all of these games.</string>
+
 </resources>

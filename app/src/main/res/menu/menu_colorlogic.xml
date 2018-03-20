@@ -4,6 +4,12 @@
     >
 
     <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/ic_action_help"
+        android:title="@string/help"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_action_settings"
 
@@ -40,9 +46,5 @@
         android:title="Duplication"
         android:checkable="true"
         />
-    <item
-        android:id="@+id/action_help"
-        android:icon="@drawable/ic_action_help"
-        android:title="Help"
-        app:showAsAction="never" />
+
 </menu>

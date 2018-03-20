@@ -1,5 +1,6 @@
 package com.dudar.colorfulmind;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -8,12 +9,16 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.dudar.colorfulmind.alphabet.AlphabetHelpActivity;
 
 import java.util.Random;
 
@@ -142,19 +147,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         alphabetRLB2.setVisibility(View.INVISIBLE);
         alphabetRLB3.setVisibility(View.INVISIBLE);
         alphabetRLB4.setVisibility(View.INVISIBLE);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-
-            default:
-                return true;
-        }
     }
 
     Runnable scheduledTaskRainbow = new Runnable() {
@@ -355,4 +347,25 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         handler.removeCallbacks(scheduledTaskNumbers);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_alphabet, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+            case R.id.action_help:
+                startActivity(new Intent(this, AlphabetHelpActivity.class));
+                return true;
+            default:
+                return true;
+        }
+    }
 }
