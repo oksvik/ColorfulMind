@@ -4,6 +4,9 @@
     <string name="alphabet">Alphabet</string>
     <string name="numbers">Numbers</string>
 
+    <string name="game_type">Type of the game</string>
+    <string name="speed">Speed</string>
+
     <string name="logic_of_colors">Logic of colors</string>
 
     <string name="red">Red</string>
@@ -25,5 +28,37 @@
     <string name="right">R</string>
     <string name="left">L</string>
     <string name="both">B</string>
+
+    <string name="letter1">A</string>
+    <string name="letter2">B</string>
+    <string name="letter3">C</string>
+    <string name="letter4">D</string>
+    <string name="letter5">E</string>
+    <string name="letter6">F</string>
+    <string name="letter7">G</string>
+    <string name="letter8">H</string>
+    <string name="letter9">I</string>
+    <string name="letter10">J</string>
+    <string name="letter11">K</string>
+    <string name="letter12">L</string>
+    <string name="letter13">M</string>
+    <string name="letter14">N</string>
+    <string name="letter15">O</string>
+    <string name="letter16">P</string>
+    <string name="letter17">Q</string>
+    <string name="letter18">R</string>
+    <string name="letter19">S</string>
+    <string name="letter20">T</string>
+    <string name="letter21">U</string>
+    <string name="letter22">V</string>
+    <string name="letter23">W</string>
+    <string name="letter24">X</string>
+    <string name="letter25">Y</string>
+    <string name="letter26">Z</string>
+    <string name="letter27">A</string>
+    <string name="letter28">I</string>
+    <string name="letter29">Y</string>
+    <string name="letter30">Q</string>
+    <string name="letter31">W</string>
 
 </resources>

@@ -73,4 +73,38 @@
         <item>@string/left</item>
         <item>@string/both</item>
     </array>
+
+    <array name="letters_array">
+        <item>@string/letter1</item>
+        <item>@string/letter2</item>
+        <item>@string/letter3</item>
+        <item>@string/letter4</item>
+        <item>@string/letter5</item>
+        <item>@string/letter6</item>
+        <item>@string/letter7</item>
+        <item>@string/letter8</item>
+        <item>@string/letter9</item>
+        <item>@string/letter10</item>
+        <item>@string/letter11</item>
+        <item>@string/letter12</item>
+        <item>@string/letter13</item>
+        <item>@string/letter14</item>
+        <item>@string/letter15</item>
+        <item>@string/letter16</item>
+        <item>@string/letter17</item>
+        <item>@string/letter18</item>
+        <item>@string/letter19</item>
+        <item>@string/letter20</item>
+        <item>@string/letter21</item>
+        <item>@string/letter22</item>
+        <item>@string/letter23</item>
+        <item>@string/letter24</item>
+        <item>@string/letter25</item>
+        <item>@string/letter26</item>
+        <item>@string/letter27</item>
+        <item>@string/letter28</item>
+        <item>@string/letter29</item>
+        <item>@string/letter30</item>
+        <item>@string/letter31</item>
+    </array>
 </resources>

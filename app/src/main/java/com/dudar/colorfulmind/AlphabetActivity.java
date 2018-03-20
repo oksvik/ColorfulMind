@@ -19,8 +19,8 @@ import java.util.Random;
 
 public class AlphabetActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, SeekBar.OnSeekBarChangeListener {
 
-    TextView rainbowTextView, alphabetLetter0, alphabetLetter1, alphabetLetter2, alphabetLetter3;
-    TextView alphabetRLB1, alphabetRLB2, alphabetRLB3, alphabetRLB4;
+    TextView rainbowTextView, alphabetLetter0, alphabetLetter1, alphabetLetter2, alphabetLetter3,alphabetLetter4;
+    TextView alphabetRLB0, alphabetRLB1, alphabetRLB2, alphabetRLB3,alphabetRLB4;
     Spinner gameTypeSpinner;
     SeekBar speedSeekBar;
 
@@ -38,10 +38,20 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     static final int SPEED_SEEKBAR_MAX_VALUE = 4;
     static final int SPEED_SEEKBAR_SIZE = SPEED_SEEKBAR_MAX_VALUE + 1;
 
+    static final int MAX_NUMBER_VALUE = 101;
+
     String[] colorsName;
     int[] colors;
     String[] hands;
+    String[] letters;
     int randomColor, randomName;
+    //int randomNumber;
+    //String randomHand;
+    //String randomLetter;
+
+    TextView[] textViewsNumbersAndLetters;
+    TextView[] textViewsRLBLetters;
+
 
     Random random;
     Handler handler;
@@ -58,6 +68,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         }
 
         initViews();
+        setLettersTextViewsInvisible();
 
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
         spinnerPosition = prefs.getInt(GAME_TYPE_SPINNER_KEY, GAME_TYPE_ALPHABET);
@@ -78,6 +89,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         colorsName = res.getStringArray(R.array.colors_name_array);
         colors = res.getIntArray(R.array.colors_array);
         hands = res.getStringArray(R.array.hands_array);
+        letters = res.getStringArray(R.array.letters_array);
 
         random = new Random();
         handler = new Handler();
@@ -90,26 +102,46 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         rainbowTextView.setVisibility(View.INVISIBLE);
 
         alphabetLetter0 = (TextView) findViewById(R.id.textViewLetter0);
-        alphabetLetter0.setVisibility(View.INVISIBLE);
         alphabetLetter1 = (TextView) findViewById(R.id.textViewLetter1);
-        alphabetLetter1.setVisibility(View.INVISIBLE);
         alphabetLetter2 = (TextView) findViewById(R.id.textViewLetter2);
-        alphabetLetter2.setVisibility(View.INVISIBLE);
         alphabetLetter3 = (TextView) findViewById(R.id.textViewLetter3);
-        alphabetLetter3.setVisibility(View.INVISIBLE);
+        alphabetLetter4 = (TextView) findViewById(R.id.textViewLetter4);
 
+        textViewsNumbersAndLetters = new TextView[5];
+        textViewsNumbersAndLetters[0] = alphabetLetter0;
+        textViewsNumbersAndLetters[1] = alphabetLetter1;
+        textViewsNumbersAndLetters[2] = alphabetLetter2;
+        textViewsNumbersAndLetters[3] = alphabetLetter3;
+        textViewsNumbersAndLetters[4] = alphabetLetter4;
+
+        alphabetRLB0 = (TextView) findViewById(R.id.textViewRLB0);
         alphabetRLB1 = (TextView) findViewById(R.id.textViewRLB1);
-        alphabetRLB1.setVisibility(View.INVISIBLE);
         alphabetRLB2 = (TextView) findViewById(R.id.textViewRLB2);
-        alphabetRLB2.setVisibility(View.INVISIBLE);
         alphabetRLB3 = (TextView) findViewById(R.id.textViewRLB3);
-        alphabetRLB3.setVisibility(View.INVISIBLE);
         alphabetRLB4 = (TextView) findViewById(R.id.textViewRLB4);
-        alphabetRLB4.setVisibility(View.INVISIBLE);
-
+        textViewsRLBLetters = new TextView[5];
+        textViewsRLBLetters[0] = alphabetRLB0;
+        textViewsRLBLetters[1] = alphabetRLB1;
+        textViewsRLBLetters[2] = alphabetRLB2;
+        textViewsRLBLetters[3] = alphabetRLB3;
+        textViewsRLBLetters[4] = alphabetRLB4;
 
         gameTypeSpinner = (Spinner) findViewById(R.id.spinner);
         speedSeekBar = (SeekBar) findViewById(R.id.speedSeekBar);
+    }
+
+    private void setLettersTextViewsInvisible() {
+        alphabetLetter0.setVisibility(View.INVISIBLE);
+        alphabetLetter1.setVisibility(View.INVISIBLE);
+        alphabetLetter2.setVisibility(View.INVISIBLE);
+        alphabetLetter3.setVisibility(View.INVISIBLE);
+        alphabetLetter4.setVisibility(View.INVISIBLE);
+
+        alphabetRLB0.setVisibility(View.INVISIBLE);
+        alphabetRLB1.setVisibility(View.INVISIBLE);
+        alphabetRLB2.setVisibility(View.INVISIBLE);
+        alphabetRLB3.setVisibility(View.INVISIBLE);
+        alphabetRLB4.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -134,7 +166,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     };
 
     private void changeRainbowText() {
-        //Log.i("runnable", "rainbow");
+        setLettersTextViewsInvisible();
 
         randomName = random.nextInt(colorsName.length);
         randomColor = random.nextInt(colors.length);
@@ -155,6 +187,13 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     };
 
     private void changeAlphabetLetters() {
+        String randomLetter, randomHand;
+
+        setLettersTextViewsInvisible();
+
+        randomLetter = letters[random.nextInt(letters.length)];
+        randomHand = hands[random.nextInt(hands.length)];
+        showLettersNumbers(randomLetter,randomHand);
 
     }
 
@@ -168,7 +207,28 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     };
 
     private void changeNumbers() {
+        int randomNumber;
+        String randomHand;
 
+        setLettersTextViewsInvisible();
+
+        randomNumber = random.nextInt(MAX_NUMBER_VALUE);
+        randomHand = hands[random.nextInt(hands.length)];
+        //Log.i("randon number", String.valueOf(randomNumber));
+        //Log.i("randon hand", randomHand);
+
+        showLettersNumbers(String.valueOf(randomNumber),randomHand);
+
+    }
+
+    private void showLettersNumbers(String topTextViewValue, String bottomTextViewValue) {
+        int randTag = random.nextInt(5);
+        textViewsNumbersAndLetters[randTag].setVisibility(View.VISIBLE);
+        textViewsNumbersAndLetters[randTag].setText(topTextViewValue);
+        textViewsNumbersAndLetters[randTag].setTextColor(colors[random.nextInt(colors.length)]);
+        textViewsRLBLetters[randTag].setVisibility(View.VISIBLE);
+        textViewsRLBLetters[randTag].setText(bottomTextViewValue);
+        textViewsRLBLetters[randTag].setTextColor(colors[random.nextInt(colors.length)]);
     }
 
     private void startRepeatingTask(int gameType) {
@@ -264,7 +324,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     }
 
     private void calculateSpeedInMillisec() {
-        double speedDouble =(double) (SPEED_SEEKBAR_SIZE - speedPosition) / 2;
+        double speedDouble = (double) (SPEED_SEEKBAR_SIZE - speedPosition) / 2;
         Log.i("Speed double", String.valueOf(speedDouble));
 
         speedInMillisec = (long) (speedDouble * 1000);
