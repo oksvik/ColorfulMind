@@ -53,4 +53,5 @@
     <string name="letter31">Я</string>
     <string name="speed">Скорость</string>
     <string name="game_type">Тип игры</string>
+    <string name="brain_training">Тренажер для мозга</string>
 </resources>

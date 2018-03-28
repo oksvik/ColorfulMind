@@ -8,6 +8,7 @@
     <string name="speed">Speed</string>
 
     <string name="logic_of_colors">Logic of colors</string>
+    <string name="brain_training">Brain training</string>
 
     <string name="red">Red</string>
     <string name="orange">Orange</string>
@@ -69,4 +70,17 @@
     <string name="alphabet_help4">The game Rainbow was invented by Russian coaches. In this game, the player is presented with a random sequence of words indicating colors - "red", "green", etc.; however, the color of the word may or may not coincide with the meaning of the word. The player should say the color of the word. But when the player sees the word “Rainbow”, they have to say this particular word instead of the color in which it is written. This prevents the player from finding strategies to see just words’ colors without reading them.</string>
     <string name="alphabet_help5">The speed of displaying letters/words can be adjusted by the player for all of these games.</string>
 
+    <string name="logic_help1">This game is based on an older, paper based game called Bulls and Cows.</string>
+    <string name="logic_help2">The player tries to guess the pattern of four colors , in both order and color, within twenty (or fifteen, or ten – depends on the game level) turns. Each guess is made by placing a row of colored squares on the decoding gameboard. Once placed, the game provides feedback by placing two numbers near the colored row with the guess. A black number with a “B” letter (like “bull”) at the top indicates the number of colored squares from the guess which is correct in both color and position; a grey number with a “C” letter (like “cow”) at the top - the number of correct colored squares placed in the wrong position.</string>
+    <string name="logic_help3">Duplicates are allowed depending on player choice. Blanks are not allowed, and the player may not use blanks in a guess in order to establish the final code.</string>
+    <string name="logic_help4">Example (duplicates are allowed)</string>
+    <string name="logic_help5">If the hidden code is cyan-green-cyan-cyan and the player guesses cyan-cyan-green-green, the game will award “1B” for the correct cyan, “2C” for the correct green and the second cyan, placed in the wrong position, nothing for the second green.</string>
+    <string name="logic_help6">Example (duplicates are not allowed)</string>
+    <string name="logic_help7">If the hidden code is green-cyan-red-yellow and the player guesses green-yellow-cyan-purple, the game will provide “1B” for the correct orange and “2C” for the correct green-red placed in the wrong position, nothing for the black.</string>
+    <string name="logic_help8">Once feedback is provided, another guess is made; guesses and feedback continue to alternate until either the player guesses correctly, or all allowed guesses are made.</string>
+    <string name="logic_help9">If the hidden code is yellow-yellow-blue-blue and the player guesses yellow-yellow-yellow-blue, the game will award “3B” for the two correct yellows and one correct blue, nothing for the third yellow as there is not a third yellow in the code and no indication is given of the fact that the code also includes a second blue.</string>
+
+    <string name="win_text">Great!\nYou are win!</string>
+    <string name="looser_text">GAME OVER\n You are lost!</string>
+    <string name="play_again_text">Do you want to play again?</string>
 </resources>

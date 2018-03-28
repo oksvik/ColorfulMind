@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -37,15 +37,17 @@
         android:id="@+id/imgColor1"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        android:layout_marginBottom="8dp"
 
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/imgColor2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:layout_constraintVertical_bias="0.502"
-        app:srcCompat="@drawable/buttonshape"
+        app:srcCompat="@drawable/buttonframe"
         tools:background="@color/orange" />
 
     <ImageView
@@ -57,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgColor1"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/buttonshape"
+        app:srcCompat="@drawable/buttonframe"
         tools:background="@color/cyan" />
 
     <ImageView
@@ -69,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgColor2"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <ImageView
         android:id="@+id/imgColor4"
@@ -80,7 +82,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgColor3"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <TextView
         android:id="@+id/tvBNumber"

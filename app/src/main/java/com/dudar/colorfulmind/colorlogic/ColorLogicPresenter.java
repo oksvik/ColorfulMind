@@ -64,7 +64,7 @@ public class ColorLogicPresenter implements ColorLogicContract.Presenter {
         colBull = secretColors.countBulls(attemptColors);
         Log.i("counted bulls: ", String.valueOf(colBull));
 
-        colCow = secretColors.countCows(attemptColors);
+        colCow = secretColors.countCowsD(attemptColors);
         Log.i("counted cows:", String.valueOf(colCow));
 
         addAttemptInGameHistory(attemptColors, colBull, colCow);

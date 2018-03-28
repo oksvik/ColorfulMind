@@ -88,6 +88,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="60sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
@@ -101,6 +102,7 @@
         android:layout_height="wrap_content"
         android:tag="0"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
         app:layout_constraintTop_toBottomOf="@+id/guideline19"
         tools:text="0" />
@@ -110,6 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
         app:layout_constraintTop_toBottomOf="@+id/textViewLetter0"
         tools:text="RLB0" />
@@ -120,6 +123,7 @@
         android:layout_height="wrap_content"
         android:tag="1"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/guideline19"
         tools:text="1" />
@@ -129,6 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toBottomOf="@+id/textViewLetter1"
         tools:text="RLB1" />
@@ -139,6 +144,7 @@
         android:layout_height="wrap_content"
         android:tag="2"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
         app:layout_constraintTop_toTopOf="@+id/guideline20"
         tools:text="2" />
@@ -148,6 +154,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
         app:layout_constraintTop_toBottomOf="@+id/textViewLetter2"
         tools:text="RLB2" />
@@ -158,6 +165,7 @@
         android:layout_height="wrap_content"
         android:tag="3"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/guideline20"
         tools:text="3" />
@@ -167,6 +175,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toBottomOf="@+id/textViewLetter3"
         tools:text="RLB3" />
@@ -179,6 +188,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
         app:layout_constraintTop_toBottomOf="@+id/textViewRLB0"
@@ -189,6 +199,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
         app:layout_constraintTop_toBottomOf="@+id/textViewLetter4"

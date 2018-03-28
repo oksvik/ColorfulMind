@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <ImageButton
         android:id="@+id/btnOrangeColor"
@@ -28,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnRedColor"
         app:layout_constraintTop_toTopOf="@+id/btnRedColor"
-        app:srcCompat="@drawable/buttonshape"
+        app:srcCompat="@drawable/buttonframe"
         />
 
     <ImageButton
@@ -40,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnOrangeColor"
         app:layout_constraintTop_toTopOf="@+id/btnOrangeColor"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <ImageButton
         android:id="@+id/btnGreenColor"
@@ -51,7 +51,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnYellowColor"
         app:layout_constraintTop_toTopOf="@+id/btnYellowColor"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <ImageButton
         android:id="@+id/btnBlueColor"
@@ -62,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnGreenColor"
         app:layout_constraintTop_toTopOf="@+id/btnGreenColor"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <ImageButton
         android:id="@+id/btnPurpleColor"
@@ -73,7 +73,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnBlueColor"
         app:layout_constraintTop_toTopOf="@+id/btnBlueColor"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <ImageButton
         android:id="@+id/btnCyanColor"
@@ -84,7 +84,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnPurpleColor"
         app:layout_constraintTop_toTopOf="@+id/btnPurpleColor"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <ImageButton
         android:id="@+id/btnBrownColor"
@@ -95,7 +95,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnCyanColor"
         app:layout_constraintTop_toTopOf="@+id/btnCyanColor"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <ImageButton
         android:id="@+id/btnGreyColor"
@@ -106,7 +106,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnBrownColor"
         app:layout_constraintTop_toTopOf="@+id/btnBrownColor"
-        app:srcCompat="@drawable/buttonshape" />
+        app:srcCompat="@drawable/buttonframe" />
 
     <ImageButton
         android:id="@+id/btnBlackColor"
@@ -117,6 +117,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnGreyColor"
         app:layout_constraintTop_toTopOf="@+id/btnGreyColor"
-        app:srcCompat="@drawable/buttonshape"
+        app:srcCompat="@drawable/buttonframe"
         />
 </android.support.constraint.ConstraintLayout>

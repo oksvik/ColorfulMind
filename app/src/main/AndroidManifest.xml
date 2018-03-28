@@ -38,6 +38,8 @@
             android:name=".alphabet.AlphabetHelpActivity"
             android:label="@string/help"
             android:parentActivityName=".AlphabetActivity" />
+
+
     </application>
 
 </manifest>

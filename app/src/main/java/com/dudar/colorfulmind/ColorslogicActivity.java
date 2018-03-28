@@ -2,6 +2,7 @@ package com.dudar.colorfulmind;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.Menu;
@@ -22,6 +24,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dudar.colorfulmind.colorlogic.ColorLogicAdapter;
 import com.dudar.colorfulmind.colorlogic.ColorLogicContract;
@@ -36,6 +39,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     int[] baseColors;
     int chosenColor;
     MyColorButton imgBtnColor1, imgBtnColor2, imgBtnColor3, imgBtnColor4;
+    ImageButton btnApproveAttempt;
     ImageView imgSecretColor1, imgSecretColor2, imgSecretColor3, imgSecretColor4;
     ListView listView;
     TextView textViewAttemptNumber;
@@ -62,6 +66,9 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
 
     Boolean isDuplicationAllowed;
     static final Boolean DUPLICATION_NOT_ALLOWED = false;
+
+    static final int GAME_OVER_WIN = 1;
+    static final int GAME_OVER_LOST = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +98,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         listView.setAdapter(itemsAdapter);
 
         ///Delete this call later
-        showSecretColours();
+        //showSecretColours();
 
     }
 
@@ -109,6 +116,8 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         imgSecretColor4 = (ImageView) findViewById(R.id.imageViewSecretColor4);
 
         textViewAttemptNumber = (TextView) findViewById(R.id.attemptNumberTextView);
+
+        btnApproveAttempt = (ImageButton) findViewById(R.id.btnApproveAttempt);
     }
 
     private void setListeners() {
@@ -301,6 +310,8 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         imgBtnColor3.refreshColor();
         imgBtnColor4.refreshColor();
 
+        btnApproveAttempt.setEnabled(true);
+
         showSecretColours();
     }
 
@@ -308,9 +319,9 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     private void onApproveAttemptBtnClick() {
         if (allColorsAreSet()) {
             if (allColorsAreSetCorrectly()) {
+                updateNumberOfMoves();
                 presenter.makePlayerStep(imgBtnColor1.getBgColorId(), imgBtnColor2.getBgColorId(),
                         imgBtnColor3.getBgColorId(), imgBtnColor4.getBgColorId());
-                updateNumberOfMoves();
             } else {
                 Snackbar mySnack = Snackbar.make(findViewById(R.id.colorLogicID), "All colors should be different", Snackbar.LENGTH_SHORT);
                 mySnack.getView().setBackgroundColor(getResources().getColor(R.color.colorPrimary));
@@ -501,7 +512,10 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         itemsAdapter.notifyDataSetChanged();
         listView.setSelection(listView.getAdapter().getCount() - 1);
         if (colBull == 4) {
-            Dialog dialog = new Dialog(this);
+            showGameOver(GAME_OVER_WIN);
+        } else
+         if (numberOfRemainingMoves == 0) {
+            showGameOver(GAME_OVER_LOST);
         }
     }
 
@@ -521,6 +535,45 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         imgSecretColor4.setBackgroundResource(colors.getColor4());
     }
 
+    void showGameOver(int gameoverType){
+
+        showSecretColours();
+        btnApproveAttempt.setEnabled(false);
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this)
+                //.setView(R.layout.gameover_dialog)
+                //.setMessage("Congratulations!")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(ColorslogicActivity.this, "Yes", Toast.LENGTH_SHORT).show();
+                        onRestartBtnClick();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(ColorslogicActivity.this, "No", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                //.create();
+        View dialogView = getLayoutInflater().inflate(R.layout.gameover_dialog,null);
+        TextView gameoverTextView = (TextView) dialogView.findViewById(R.id.gameoverTextView);
+        switch (gameoverType){
+            case GAME_OVER_WIN:
+                gameoverTextView.setText(R.string.win_text);
+                break;
+            case GAME_OVER_LOST:
+                gameoverTextView.setText(R.string.looser_text);
+                break;
+        }
+        //Window dialogWindow = dialog.getWindow();
+        //dialogWindow.setGravity(Gravity.BOTTOM);
+
+        dialogBuilder.setView(dialogView);
+        dialogBuilder.show();
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -528,7 +581,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt(GAME_LEVEL_KEY, gameLevel);
         editor.putBoolean(GAME_DUPLICATION_KEY, isDuplicationAllowed);
-        editor.commit();
+        editor.apply();
     }
 
     @Override

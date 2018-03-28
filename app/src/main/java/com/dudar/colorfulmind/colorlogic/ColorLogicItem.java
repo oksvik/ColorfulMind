@@ -1,5 +1,7 @@
 package com.dudar.colorfulmind.colorlogic;
 
+import java.util.ArrayList;
+
 public class ColorLogicItem {
     private int color1, color2, color3, color4;
 
@@ -82,6 +84,38 @@ public class ColorLogicItem {
             cows++;
         if (color4 == attemptColors.color1 || color4 == attemptColors.color2 || color4 == attemptColors.color3)
             cows++;
+        return cows;
+    }
+
+    int countCowsD(ColorLogicItem attemptColors){
+        int cows = 0;
+        ArrayList<Integer> arColor = new ArrayList<Integer>();
+        ArrayList<Integer> arAttempt = new ArrayList<Integer>();
+
+        if (color1 != attemptColors.color1){
+            arColor.add(color1);
+            arAttempt.add(attemptColors.color1);
+        }
+        if (color2 != attemptColors.color2){
+            arColor.add(color2);
+            arAttempt.add(attemptColors.color2);
+        }
+        if (color3 != attemptColors.color3){
+            arColor.add(color3);
+            arAttempt.add(attemptColors.color3);
+        }
+        if (color4 != attemptColors.color4){
+            arColor.add(color4);
+            arAttempt.add(attemptColors.color4);
+        }
+
+        for (Integer c: arColor) {
+            if (arAttempt.contains(c)) {
+                arAttempt.remove(c);
+                cows++;
+            }
+        }
+
         return cows;
     }
 }
