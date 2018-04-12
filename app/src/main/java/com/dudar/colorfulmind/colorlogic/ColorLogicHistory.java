@@ -33,4 +33,8 @@ public class ColorLogicHistory {
     public void deleteHistory(){
         itemsOfGameHistory.clear();
     }
+
+    public void copyHistory(ArrayList<ColorLogicHistoryItem> recoveredHistory) {
+        itemsOfGameHistory = recoveredHistory;
+    }
 }

@@ -33,7 +33,7 @@
         <activity
             android:name=".colorlogic.ColorsLogicHelpActivity"
             android:label="@string/help"
-            android:parentActivityName=".ColorslogicActivity" />
+            />
         <activity
             android:name=".alphabet.AlphabetHelpActivity"
             android:label="@string/help"

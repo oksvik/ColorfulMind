@@ -172,7 +172,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     Runnable scheduledTaskAlphabet = new Runnable() {
         @Override
         public void run() {
-            Log.i("task in alphabet", "millis passed");
+            //Log.i("task in alphabet", "millis passed");
             handler.postDelayed(this, speedInMillisec);
             changeAlphabetLetters();
         }
@@ -192,7 +192,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     Runnable scheduledTaskNumbers = new Runnable() {
         @Override
         public void run() {
-            Log.i("task in numbers", "millis passed");
+            //Log.i("task in numbers", "millis passed");
             handler.postDelayed(this, speedInMillisec);
             changeNumbers();
         }
@@ -316,7 +316,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     }
 
     private void calculateSpeedInMillisec() {
-        double speedDouble = (double) (SPEED_SEEKBAR_SIZE - speedPosition) / 2;
+        double speedDouble =  (SPEED_SEEKBAR_SIZE - speedPosition) / 2.0;
         Log.i("Speed double", String.valueOf(speedDouble));
 
         speedInMillisec = (long) (speedDouble * 1000);

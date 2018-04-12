@@ -84,5 +84,10 @@ public class ColorLogicPresenter implements ColorLogicContract.Presenter {
         return secretColors;
     }
 
+    @Override
+    public void copySecretColors(int[] restoredColors) {
+        secretColors.setColors(restoredColors[0],restoredColors[1],restoredColors[2],restoredColors[3]);
+    }
+
 
 }

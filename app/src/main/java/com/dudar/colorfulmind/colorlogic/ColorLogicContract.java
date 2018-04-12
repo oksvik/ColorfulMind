@@ -14,5 +14,6 @@ public interface ColorLogicContract {
         void setSecretColors(int[] baseColors, int numberOfColors, boolean isDuplecationAllowed);
         ColorLogicItem getSecretColors();
 
+        void copySecretColors(int[] restoredColors);
     }
 }

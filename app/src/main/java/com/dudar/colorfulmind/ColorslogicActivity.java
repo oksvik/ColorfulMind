@@ -13,6 +13,7 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,10 +30,13 @@ import android.widget.Toast;
 import com.dudar.colorfulmind.colorlogic.ColorLogicAdapter;
 import com.dudar.colorfulmind.colorlogic.ColorLogicContract;
 import com.dudar.colorfulmind.colorlogic.ColorLogicHistory;
+import com.dudar.colorfulmind.colorlogic.ColorLogicHistoryItem;
 import com.dudar.colorfulmind.colorlogic.ColorLogicItem;
 import com.dudar.colorfulmind.colorlogic.ColorLogicPresenter;
 import com.dudar.colorfulmind.colorlogic.ColorsLogicHelpActivity;
 import com.dudar.colorfulmind.colorlogic.MyColorButton;
+
+import java.util.ArrayList;
 
 public class ColorslogicActivity extends AppCompatActivity implements View.OnClickListener, ColorLogicContract.View {
 
@@ -70,6 +74,13 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     static final int GAME_OVER_WIN = 1;
     static final int GAME_OVER_LOST = 2;
 
+    static final String STATE_ITEM_REMAINING_MOVES_KEY = "state_item_remaining_moves_key";
+    static final String STATE_ITEM_SECRET_COLORS_KEY = "state_item_secret_colors_key";
+    static final String STATE_ITEM_GUESS_COLORS_KEY = "state_item_guess_colors_key";
+    static final String STATE_ITEM_HISTORY_KEY = "state_item_history_key";
+
+    int[] restoredSecretColors;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,17 +100,46 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
 
         fetchParameters();
 
-
         presenter = new ColorLogicPresenter(this);
-        presenter.setSecretColors(baseColors, numberOfColors,isDuplicationAllowed);
 
         history = ColorLogicHistory.getHistoryInstance();
-        itemsAdapter = new ColorLogicAdapter(this, history.getHistoryItems());
-        listView.setAdapter(itemsAdapter);
+
 
         ///Delete this call later
         //showSecretColours();
+        if (savedInstanceState != null) {
+            restoreState(savedInstanceState);
+            presenter.copySecretColors(restoredSecretColors);
+        } else {
+            presenter.setSecretColors(baseColors, numberOfColors, isDuplicationAllowed);
+        }
 
+        itemsAdapter = new ColorLogicAdapter(this, history.getHistoryItems());
+        listView.setAdapter(itemsAdapter);
+    }
+
+    private void restoreState(Bundle savedInstanceState) {
+
+        //Log.i("restore state",savedInstanceState.toString());
+        numberOfRemainingMoves = savedInstanceState.getInt(STATE_ITEM_REMAINING_MOVES_KEY);
+        textViewAttemptNumber.setText(String.format("%d", numberOfRemainingMoves));
+
+        restoredSecretColors = savedInstanceState.getIntArray(STATE_ITEM_SECRET_COLORS_KEY);
+
+        int[] restoredGuessColors = savedInstanceState.getIntArray(STATE_ITEM_GUESS_COLORS_KEY);
+        if (restoredGuessColors != null) {
+            imgBtnColor1.setBackgroundResource(restoredGuessColors[0]);
+            imgBtnColor2.setBackgroundResource(restoredGuessColors[1]);
+            imgBtnColor3.setBackgroundResource(restoredGuessColors[2]);
+            imgBtnColor4.setBackgroundResource(restoredGuessColors[3]);
+        }
+
+        ArrayList<ColorLogicHistoryItem> recoveredHistory = savedInstanceState.getParcelableArrayList(STATE_ITEM_HISTORY_KEY);
+        Log.i("recoveredHistory", recoveredHistory.toString());
+        history.copyHistory(recoveredHistory);
+        Log.i("copied history", history.getHistoryItems().toString());
+        //itemsAdapter.notifyDataSetChanged();
+        //listView.setSelection(listView.getAdapter().getCount() - 1);
     }
 
     private void initViews() {
@@ -225,8 +265,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
                 if (item.isChecked()) {
                     item.setChecked(false);
                     isDuplicationAllowed = false;
-                }
-                else {
+                } else {
                     item.setChecked(true);
                     isDuplicationAllowed = true;
                 }
@@ -513,8 +552,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         listView.setSelection(listView.getAdapter().getCount() - 1);
         if (colBull == 4) {
             showGameOver(GAME_OVER_WIN);
-        } else
-         if (numberOfRemainingMoves == 0) {
+        } else if (numberOfRemainingMoves == 0) {
             showGameOver(GAME_OVER_LOST);
         }
     }
@@ -535,7 +573,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         imgSecretColor4.setBackgroundResource(colors.getColor4());
     }
 
-    void showGameOver(int gameoverType){
+    void showGameOver(int gameoverType) {
 
         showSecretColours();
         btnApproveAttempt.setEnabled(false);
@@ -556,15 +594,18 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
                         Toast.makeText(ColorslogicActivity.this, "No", Toast.LENGTH_SHORT).show();
                     }
                 });
-                //.create();
-        View dialogView = getLayoutInflater().inflate(R.layout.gameover_dialog,null);
+        //.create();
+        View dialogView = getLayoutInflater().inflate(R.layout.gameover_dialog, null);
         TextView gameoverTextView = (TextView) dialogView.findViewById(R.id.gameoverTextView);
-        switch (gameoverType){
+        ImageView gameoverImage = (ImageView) dialogView.findViewById(R.id.gameoverImageView);
+        switch (gameoverType) {
             case GAME_OVER_WIN:
                 gameoverTextView.setText(R.string.win_text);
+                gameoverImage.setBackgroundResource(R.drawable.bull_message);
                 break;
             case GAME_OVER_LOST:
                 gameoverTextView.setText(R.string.looser_text);
+                gameoverImage.setBackgroundResource(R.drawable.cow_message);
                 break;
         }
         //Window dialogWindow = dialog.getWindow();
@@ -582,6 +623,55 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         editor.putInt(GAME_LEVEL_KEY, gameLevel);
         editor.putBoolean(GAME_DUPLICATION_KEY, isDuplicationAllowed);
         editor.apply();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+        Log.i("save method", Integer.toString(numberOfRemainingMoves));
+        outState.putInt(STATE_ITEM_REMAINING_MOVES_KEY, numberOfRemainingMoves);
+        int[] secretColors = {presenter.getSecretColors().getColor1(), presenter.getSecretColors().getColor2(),
+                presenter.getSecretColors().getColor3(), presenter.getSecretColors().getColor4()};
+        outState.putIntArray(STATE_ITEM_SECRET_COLORS_KEY, secretColors);
+
+        int[] guessColors = {imgBtnColor1.getBgColorId(), imgBtnColor2.getBgColorId(),
+                imgBtnColor3.getBgColorId(), imgBtnColor4.getBgColorId()};
+        outState.putIntArray(STATE_ITEM_GUESS_COLORS_KEY, guessColors);
+
+        outState.putParcelableArrayList(STATE_ITEM_HISTORY_KEY, history.getHistoryItems());
+        outState.putParcelableArrayList("my_history", history.getHistoryItems());
+        Log.i("history to save", history.getHistoryItems().toString());
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Bundle viewHierarchy = savedInstanceState.getBundle("android:viewHierarchyState");
+        if (viewHierarchy != null) {/*
+            SparseArray views = viewHierarchy.getSparseParcelableArray("android:views");
+            if (views != null) {
+                for (int i = 0; i < views.size(); i++) {
+                    Log.i("Restore method", "key -->" + views.get(i));
+                    Log.i("Restore method", "value --> " + views.valueAt(i));
+                }
+            }
+            */
+        } else {
+            Log.i("Restore method", "no view data");
+        }
+
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override
