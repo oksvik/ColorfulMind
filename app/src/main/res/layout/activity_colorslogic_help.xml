@@ -75,6 +75,20 @@
             tools:text="help3" />
 
         <TextView
+            android:id="@+id/textViewLogicHelp8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/logic_help8"
+            android:textColor="@color/helptext"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline14"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLogicHelp3"
+            tools:text="help8" />
+
+
+        <TextView
             android:id="@+id/textViewLogicHelp4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -109,6 +123,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/logic_ex1_d"
+            android:contentDescription="@string/desc_example"
             app:layout_constraintEnd_toStartOf="@+id/guideline14"
             app:layout_constraintStart_toStartOf="@+id/guideline13"
             app:layout_constraintTop_toBottomOf="@+id/textViewLogicHelp5"
@@ -126,6 +141,21 @@
             app:layout_constraintStart_toStartOf="@+id/guideline13"
             app:layout_constraintTop_toBottomOf="@+id/imageViewLogicHelp1"
             tools:text="help9" />
+
+        <ImageView
+            android:id="@+id/imageViewLogicHelp3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/logic_ex2_d"
+            android:contentDescription="@string/desc_example"
+            app:layout_constraintEnd_toStartOf="@+id/guideline14"
+            app:layout_constraintHorizontal_bias="0.541"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLogicHelp9"
+            app:srcCompat="@drawable/plainframe" />
 
         <TextView
             android:id="@+id/textViewLogicHelp6"
@@ -163,38 +193,19 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/logic_ex2"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/desc_example"
             app:layout_constraintEnd_toStartOf="@+id/guideline14"
-            app:layout_constraintHorizontal_bias="0.041"
             app:layout_constraintStart_toStartOf="@+id/guideline13"
             app:layout_constraintTop_toBottomOf="@+id/textViewLogicHelp7"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/plainframe" />
 
         <TextView
-            android:id="@+id/textViewLogicHelp8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/logic_help8"
-            android:textColor="@color/helptext"
-            android:textSize="18sp"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline14"
             app:layout_constraintStart_toStartOf="@+id/guideline13"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLogicHelp3"
-            tools:text="help8" />
-
-        <ImageView
-            android:id="@+id/imageViewLogicHelp3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:layout_marginStart="24dp"
-            android:background="@drawable/logic_ex2_d"
-            app:layout_constraintEnd_toStartOf="@+id/guideline14"
-            app:layout_constraintHorizontal_bias="0.541"
-            app:layout_constraintStart_toStartOf="@+id/guideline13"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLogicHelp9"
-            app:srcCompat="@drawable/plainframe" />
+            app:layout_constraintTop_toBottomOf="@id/imageViewLogicHelp2"
+            tools:text="space" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

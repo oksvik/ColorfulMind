@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.rainbow_btn).setOnClickListener(this);
         findViewById(R.id.alphabet_btn).setOnClickListener(this);
         findViewById(R.id.colors_btn).setOnClickListener(this);
     }
@@ -22,9 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent();
 
         switch (view.getId()){
-            case R.id.rainbow_btn:
-                intent= new Intent(this,RainbowActivity.class);
-                break;
             case R.id.alphabet_btn:
                 intent=new Intent(this,AlphabetActivity.class);
                 break;

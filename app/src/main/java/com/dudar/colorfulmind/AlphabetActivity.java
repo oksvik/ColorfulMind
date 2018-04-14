@@ -32,9 +32,11 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     int spinnerPosition;
     int speedPosition;
     long speedInMillisec;
+    int gameLanguage;
 
     static final String GAME_TYPE_SPINNER_KEY = "game_type_spinner";
     static final String GAME_SPEED_KEY = "speed_seekbar_position";
+    static final String GAME_LANGUAGE_KEY = "game_language";
 
     static final int GAME_TYPE_ALPHABET = 0;
     static final int GAME_TYPE_NUMBERS = 1;
@@ -44,6 +46,10 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     static final int SPEED_SEEKBAR_SIZE = SPEED_SEEKBAR_MAX_VALUE + 1;
 
     static final int MAX_NUMBER_VALUE = 101;
+
+    static final int GAME_LANGUAGE_ENGLISH = 1;
+    static final int GAME_LANGUAGE_GERMAN = 2;
+    static final int GAME_LANGUAGE_RUSSIAN = 3;
 
     String[] colorsName;
     int[] colors;
@@ -80,6 +86,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         speedPosition = prefs.getInt(GAME_SPEED_KEY, 0);
         Log.i("INFO: spinnerPosition", String.valueOf(spinnerPosition));
         Log.i("INFO: speedPosition", String.valueOf(speedPosition));
+        gameLanguage = prefs.getInt(GAME_LANGUAGE_KEY, GAME_LANGUAGE_ENGLISH);
 
         gameTypeSpinner.setSelection(spinnerPosition);
         gameTypeSpinner.setOnItemSelectedListener(this);
@@ -88,13 +95,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         speedSeekBar.setOnSeekBarChangeListener(this);
         speedSeekBar.setMax(SPEED_SEEKBAR_MAX_VALUE);
 
-        Log.i("INFO: speedPosition 2", String.valueOf(speedPosition));
-
-        Resources res = getResources();
-        colorsName = res.getStringArray(R.array.colors_name_array);
-        colors = res.getIntArray(R.array.colors_array);
-        hands = res.getStringArray(R.array.hands_array);
-        letters = res.getStringArray(R.array.letters_array);
+        fetchGameArrays(gameLanguage);
 
         random = new Random();
         handler = new Handler();
@@ -102,15 +103,39 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         calculateSpeedInMillisec();
     }
 
+    private void fetchGameArrays(int language) {
+        Resources res = getResources();
+        switch (language){
+            case GAME_LANGUAGE_ENGLISH:
+                colorsName = res.getStringArray(R.array.colors_name_array_english);
+                hands = res.getStringArray(R.array.hands_array);
+                letters = res.getStringArray(R.array.letters_array);
+
+                break;
+            case GAME_LANGUAGE_GERMAN:
+                colorsName = res.getStringArray(R.array.colors_name_array_german);
+                hands = res.getStringArray(R.array.hands_array);
+                letters = res.getStringArray(R.array.letters_array);
+                break;
+            case GAME_LANGUAGE_RUSSIAN:
+                colorsName = res.getStringArray(R.array.colors_name_array_russian);
+                hands = res.getStringArray(R.array.hands_array_russian);
+                letters = res.getStringArray(R.array.letters_array_russian);
+                break;
+        }
+        colors = res.getIntArray(R.array.colors_array);
+
+    }
+
     private void initViews() {
-        rainbowTextView = (TextView) findViewById(R.id.textViewRainbow);
+        rainbowTextView = findViewById(R.id.textViewRainbow);
         rainbowTextView.setVisibility(View.INVISIBLE);
 
-        alphabetLetter0 = (TextView) findViewById(R.id.textViewLetter0);
-        alphabetLetter1 = (TextView) findViewById(R.id.textViewLetter1);
-        alphabetLetter2 = (TextView) findViewById(R.id.textViewLetter2);
-        alphabetLetter3 = (TextView) findViewById(R.id.textViewLetter3);
-        alphabetLetter4 = (TextView) findViewById(R.id.textViewLetter4);
+        alphabetLetter0 = findViewById(R.id.textViewLetter0);
+        alphabetLetter1 = findViewById(R.id.textViewLetter1);
+        alphabetLetter2 = findViewById(R.id.textViewLetter2);
+        alphabetLetter3 = findViewById(R.id.textViewLetter3);
+        alphabetLetter4 = findViewById(R.id.textViewLetter4);
 
         textViewsNumbersAndLetters = new TextView[5];
         textViewsNumbersAndLetters[0] = alphabetLetter0;
@@ -119,11 +144,11 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         textViewsNumbersAndLetters[3] = alphabetLetter3;
         textViewsNumbersAndLetters[4] = alphabetLetter4;
 
-        alphabetRLB0 = (TextView) findViewById(R.id.textViewRLB0);
-        alphabetRLB1 = (TextView) findViewById(R.id.textViewRLB1);
-        alphabetRLB2 = (TextView) findViewById(R.id.textViewRLB2);
-        alphabetRLB3 = (TextView) findViewById(R.id.textViewRLB3);
-        alphabetRLB4 = (TextView) findViewById(R.id.textViewRLB4);
+        alphabetRLB0 = findViewById(R.id.textViewRLB0);
+        alphabetRLB1 = findViewById(R.id.textViewRLB1);
+        alphabetRLB2 = findViewById(R.id.textViewRLB2);
+        alphabetRLB3 = findViewById(R.id.textViewRLB3);
+        alphabetRLB4 = findViewById(R.id.textViewRLB4);
         textViewsRLBLetters = new TextView[5];
         textViewsRLBLetters[0] = alphabetRLB0;
         textViewsRLBLetters[1] = alphabetRLB1;
@@ -131,8 +156,8 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         textViewsRLBLetters[3] = alphabetRLB3;
         textViewsRLBLetters[4] = alphabetRLB4;
 
-        gameTypeSpinner = (Spinner) findViewById(R.id.spinner);
-        speedSeekBar = (SeekBar) findViewById(R.id.speedSeekBar);
+        gameTypeSpinner = findViewById(R.id.spinner);
+        speedSeekBar = findViewById(R.id.speedSeekBar);
     }
 
     private void setLettersTextViewsInvisible() {
@@ -340,6 +365,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         editor.putInt(GAME_TYPE_SPINNER_KEY, spinnerPosition);
         editor.putInt(GAME_SPEED_KEY, speedPosition);
         Log.i("Speed position onstop", String.valueOf(speedPosition));
+        editor.putInt(GAME_LANGUAGE_KEY, gameLanguage);
         editor.apply();
 
         handler.removeCallbacks(scheduledTaskRainbow);
@@ -351,6 +377,7 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_alphabet, menu);
+        menu.getItem(gameLanguage).setChecked(true);
         return true;
     }
 
@@ -363,6 +390,27 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
                 return true;
             case R.id.action_help:
                 startActivity(new Intent(this, AlphabetHelpActivity.class));
+                return true;
+            case R.id.action_language_english:
+                if (!item.isChecked()){
+                    item.setChecked(true);
+                    gameLanguage = GAME_LANGUAGE_ENGLISH;
+                    fetchGameArrays(GAME_LANGUAGE_ENGLISH);
+                }
+                return true;
+            case R.id.action_language_german:
+                if (!item.isChecked()){
+                    item.setChecked(true);
+                    gameLanguage = GAME_LANGUAGE_GERMAN;
+                    fetchGameArrays(GAME_LANGUAGE_GERMAN);
+                }
+                return true;
+            case R.id.action_language_russian:
+                if (!item.isChecked()){
+                    item.setChecked(true);
+                    gameLanguage = GAME_LANGUAGE_RUSSIAN;
+                    fetchGameArrays(GAME_LANGUAGE_RUSSIAN);
+                }
                 return true;
             default:
                 return true;

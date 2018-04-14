@@ -48,7 +48,8 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:layout_constraintVertical_bias="0.502"
         app:srcCompat="@drawable/buttonframe"
-        tools:background="@color/orange" />
+        tools:background="@color/orange"
+        android:contentDescription="@string/desc_background"/>
 
     <ImageView
         android:id="@+id/imgColor2"
@@ -60,7 +61,8 @@
         app:layout_constraintStart_toEndOf="@+id/imgColor1"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="@drawable/buttonframe"
-        tools:background="@color/cyan" />
+        tools:background="@color/cyan"
+        android:contentDescription="@string/desc_background"/>
 
     <ImageView
         android:id="@+id/imgColor3"
@@ -71,7 +73,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgColor2"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/buttonframe" />
+        app:srcCompat="@drawable/buttonframe"
+        android:contentDescription="@string/desc_background"/>
 
     <ImageView
         android:id="@+id/imgColor4"
@@ -82,14 +85,15 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgColor3"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/buttonframe" />
+        app:srcCompat="@drawable/buttonframe"
+        android:contentDescription="@string/desc_background"/>
 
     <TextView
         android:id="@+id/tvBNumber"
         android:layout_width="22dp"
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
-        android:text="0"
+        android:text="@string/default_number"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="24sp"
@@ -113,7 +117,7 @@
         android:id="@+id/tvCNumber"
         android:layout_width="22dp"
         android:layout_height="28dp"
-        android:text="0"
+        android:text="@string/default_number"
         android:textAlignment="textEnd"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"

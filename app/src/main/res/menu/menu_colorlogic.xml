@@ -13,7 +13,7 @@
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_action_settings"
 
-        android:title="Game level"
+        android:title="@string/game_level"
         app:showAsAction="never">
         <menu>
             <!-- menu group -->
@@ -23,19 +23,19 @@
                 >
                 <item
                     android:id="@+id/menu_level_easy"
-                    android:title="easy" />
+                    android:title="@string/level_easy" />
                 <item
                     android:id="@+id/menu_level_middle"
-                    android:title="middle" />
+                    android:title="@string/level_middle" />
                 <item
                     android:id="@+id/menu_level_hard"
-                    android:title="hard" />
+                    android:title="@string/level_hard" />
                 <item
                     android:id="@+id/menu_level_veryhard"
-                    android:title="very hard" />
+                    android:title="@string/level_very_hard" />
                 <item
                     android:id="@+id/menu_level_crazy"
-                    android:title="crazy" />
+                    android:title="@string/level_crazy" />
 
             </group>
         </menu>
@@ -43,7 +43,7 @@
 
     <item
         android:id="@+id/action_duplicate"
-        android:title="Duplication"
+        android:title="@string/duplication"
         android:checkable="true"
         />
 

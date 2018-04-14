@@ -10,57 +10,9 @@
     <string name="logic_of_colors">Logic of colors</string>
     <string name="brain_training">Brain training</string>
 
-    <string name="red">Red</string>
-    <string name="orange">Orange</string>
-    <string name="yellow">Yellow</string>
-    <string name="green">Green</string>
-    <string name="blue">Blue</string>
-    <string name="purple">Purple</string>
-    <string name="black">Black</string>
-    <string name="pink">Pink</string>
-    <string name="grey">Grey</string>
-    <string name="brown">Brown</string>
-    <string name="cyan">Cyan</string>
-
-
     <string name="dialog_title">Pick the color</string>
     <string name="colors_not_set">You should set all colors</string>
-
-    <string name="right">R</string>
-    <string name="left">L</string>
-    <string name="both">B</string>
-
-    <string name="letter1">A</string>
-    <string name="letter2">B</string>
-    <string name="letter3">C</string>
-    <string name="letter4">D</string>
-    <string name="letter5">E</string>
-    <string name="letter6">F</string>
-    <string name="letter7">G</string>
-    <string name="letter8">H</string>
-    <string name="letter9">I</string>
-    <string name="letter10">J</string>
-    <string name="letter11">K</string>
-    <string name="letter12">L</string>
-    <string name="letter13">M</string>
-    <string name="letter14">N</string>
-    <string name="letter15">O</string>
-    <string name="letter16">P</string>
-    <string name="letter17">Q</string>
-    <string name="letter18">R</string>
-    <string name="letter19">S</string>
-    <string name="letter20">T</string>
-    <string name="letter21">U</string>
-    <string name="letter22">V</string>
-    <string name="letter23">W</string>
-    <string name="letter24">X</string>
-    <string name="letter25">Y</string>
-    <string name="letter26">Z</string>
-    <string name="letter27">A</string>
-    <string name="letter28">I</string>
-    <string name="letter29">Y</string>
-    <string name="letter30">Q</string>
-    <string name="letter31">W</string>
+    <string name="colors_no_duplication">All colors should be different</string>
 
     <string name="help" translatable="false">Help</string>
 
@@ -83,4 +35,25 @@
     <string name="win_text">Great!\nYou are win!</string>
     <string name="looser_text">GAME OVER\n You are lost!</string>
     <string name="play_again_text">Do you want to play again?</string>
+
+    <string name="language_english">English</string>
+    <string name="language_german">German</string>
+    <string name="language_russian">Russian</string>
+
+    <string name="bull">B</string>
+    <string name="cow">C</string>
+
+    <string name="blue" translatable="false">blue</string>
+    <string name="game_level">Game level</string>
+    <string name="level_easy">easy</string>
+    <string name="level_middle">middle</string>
+    <string name="level_hard">hard</string>
+    <string name="level_very_hard">very hard</string>
+    <string name="level_crazy">crazy</string>
+    <string name="duplication">Duplication</string>
+
+    <string name="desc_background" translatable="false">Layout background image</string>
+    <string name="desc_example" translatable="false">Screenshot of the game process</string>
+    <string name="desc_image_btn" translatable="false">ImageButton</string>
+    <string name="default_number" translatable="false">0</string>
 </resources>

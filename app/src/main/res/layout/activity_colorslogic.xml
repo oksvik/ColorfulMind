@@ -33,6 +33,7 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/desc_background"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
@@ -48,14 +49,15 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/imageViewSecretColor3"
         app:layout_constraintStart_toEndOf="@+id/imageViewSecretColor1"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+        android:contentDescription="@string/desc_background"/>
 
     <ImageView
         android:id="@+id/imageViewSecretColor1"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:background="@drawable/buttonframe"
-        android:contentDescription="Secret color N1"
+        android:contentDescription="@string/desc_background"
         android:src="@android:drawable/ic_lock_lock"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/imageViewSecretColor2"
@@ -95,7 +97,7 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:background="@drawable/buttonframe"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/desc_background"
         android:src="@android:drawable/ic_lock_lock"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/imageViewSecretColor4"
@@ -111,7 +113,8 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintStart_toEndOf="@+id/imageViewSecretColor3"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+        android:contentDescription="@string/desc_background"/>
 
     <ImageView
         android:id="@+id/imageFrame"
@@ -123,7 +126,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
-        />
+        android:contentDescription="@string/desc_background"/>
 
     <ListView
         android:id="@+id/listView"
@@ -189,7 +192,7 @@
         android:id="@+id/textView3"
         android:layout_width="22dp"
         android:layout_height="32dp"
-        android:text="B"
+        android:text="@string/bull"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="30sp"
@@ -204,7 +207,7 @@
         android:layout_width="22dp"
         android:layout_height="32dp"
         android:layout_marginEnd="4dp"
-        android:text="C"
+        android:text="@string/cow"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
@@ -227,7 +230,8 @@
         app:layout_constraintTop_toTopOf="@+id/guideline5"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintVertical_chainStyle="spread_inside"
-        app:srcCompat="@drawable/ic_check48" />
+        app:srcCompat="@drawable/ic_check48"
+        android:contentDescription="@string/desc_background"/>
 
     <ImageButton
         android:id="@+id/btnRestart"
@@ -242,16 +246,17 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:srcCompat="@drawable/ic_refresh" />
+        app:srcCompat="@drawable/ic_refresh"
+        android:contentDescription="@string/desc_background"/>
 
     <TextView
         android:id="@+id/attemptNumberTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="0"
+        android:text="@string/default_number"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineVertical"

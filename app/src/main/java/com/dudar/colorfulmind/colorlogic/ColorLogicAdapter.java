@@ -30,12 +30,12 @@ public class ColorLogicAdapter extends ArrayAdapter<ColorLogicHistoryItem>{
 
         ColorLogicHistoryItem currentHistoryItem = getItem(position);
 
-        ImageView imgColor1 = (ImageView) listItemView.findViewById(R.id.imgColor1);
-        ImageView imgColor2 = (ImageView) listItemView.findViewById(R.id.imgColor2);
-        ImageView imgColor3 = (ImageView) listItemView.findViewById(R.id.imgColor3);
-        ImageView imgColor4 = (ImageView) listItemView.findViewById(R.id.imgColor4);
-        TextView bullsNumber = (TextView) listItemView.findViewById(R.id.tvBNumber);
-        TextView cowsNumber = (TextView) listItemView.findViewById(R.id.tvCNumber);
+        ImageView imgColor1 = listItemView.findViewById(R.id.imgColor1);
+        ImageView imgColor2 = listItemView.findViewById(R.id.imgColor2);
+        ImageView imgColor3 = listItemView.findViewById(R.id.imgColor3);
+        ImageView imgColor4 = listItemView.findViewById(R.id.imgColor4);
+        TextView bullsNumber = listItemView.findViewById(R.id.tvBNumber);
+        TextView cowsNumber = listItemView.findViewById(R.id.tvCNumber);
 
         imgColor1.setBackgroundResource(currentHistoryItem.getColor1());
         imgColor2.setBackgroundResource(currentHistoryItem.getColor2());

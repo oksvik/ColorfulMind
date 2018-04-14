@@ -8,7 +8,7 @@ public class ColorLogicHistoryItem implements Parcelable{
     private int color1, color2, color3, color4;
     private int blackBull, whiteCow;
 
-    public ColorLogicHistoryItem(ColorLogicItem attemptColors, int colBull, int colCow) {
+    ColorLogicHistoryItem(ColorLogicItem attemptColors, int colBull, int colCow) {
         color1 = attemptColors.getColor1();
         color2 = attemptColors.getColor2();
         color3 = attemptColors.getColor3();
@@ -30,27 +30,27 @@ public class ColorLogicHistoryItem implements Parcelable{
         whiteCow = arrayOfData[5];
     }
 
-    public int getColor1() {
+    int getColor1() {
         return color1;
     }
 
-    public int getColor2() {
+    int getColor2() {
         return color2;
     }
 
-    public int getColor3() {
+    int getColor3() {
         return color3;
     }
 
-    public int getColor4() {
+    int getColor4() {
         return color4;
     }
 
-    public int getBlackBullNumber() {
+    int getBlackBullNumber() {
         return blackBull;
     }
 
-    public int getWhiteCowNumber() {
+    int getWhiteCowNumber() {
         return whiteCow;
     }
 
@@ -61,12 +61,6 @@ public class ColorLogicHistoryItem implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int flags) {
-        //parcel.writeInt(color1);
-        //parcel.writeInt(color2);
-        //parcel.writeInt(color3);
-        //parcel.writeInt(color4);
-        //parcel.writeInt(blackBull);
-        //parcel.writeInt(whiteCow);
         int[] arrayToParcel = {color1,color2,color3,color4,blackBull,whiteCow};
         parcel.writeIntArray(arrayToParcel);
         Log.i("write to parcel",arrayToParcel.toString());
@@ -81,4 +75,16 @@ public class ColorLogicHistoryItem implements Parcelable{
             return new ColorLogicHistoryItem[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "ColorLogicHistoryItem{" +
+                "color1=" + color1 +
+                ", color2=" + color2 +
+                ", color3=" + color3 +
+                ", color4=" + color4 +
+                ", blackBull=" + blackBull +
+                ", whiteCow=" + whiteCow +
+                '}';
+    }
 }

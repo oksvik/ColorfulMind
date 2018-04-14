@@ -2,17 +2,13 @@ package com.dudar.colorfulmind.colorlogic;
 
 import java.util.ArrayList;
 
-/**
- * Created by dudar on 23.02.2018.
- */
-
 public class ColorLogicHistory {
     private static ColorLogicHistory historyInstance = null;
 
     private ArrayList<ColorLogicHistoryItem> itemsOfGameHistory;
 
     private ColorLogicHistory(){
-        itemsOfGameHistory = new ArrayList<ColorLogicHistoryItem>();
+        itemsOfGameHistory = new ArrayList<>();
     }
 
     public static ColorLogicHistory getHistoryInstance(){
@@ -26,7 +22,7 @@ public class ColorLogicHistory {
         return itemsOfGameHistory;
     }
 
-    public void addHistoryItem (ColorLogicHistoryItem item){
+    void addHistoryItem (ColorLogicHistoryItem item){
         itemsOfGameHistory.add(item);
     }
 

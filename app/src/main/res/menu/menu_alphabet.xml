@@ -7,5 +7,18 @@
         android:title="@string/help"
         app:showAsAction="always" />
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/action_language_english"
+            android:title="@string/language_english" />
+
+        <item
+            android:id="@+id/action_language_german"
+            android:title="@string/language_german" />
+
+        <item
+            android:id="@+id/action_language_russian"
+            android:title="@string/language_russian" />
+    </group>
 
 </menu>

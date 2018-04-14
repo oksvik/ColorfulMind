@@ -9,21 +9,18 @@ public class ColorLogicPresenter implements ColorLogicContract.Presenter {
     private ColorLogicContract.View view;
     private ColorLogicItem attemptColors, secretColors;
 
-    ColorLogicHistory history;
-
-    //ArrayList<ColorLogicHistoryItem> itemsOfGameHistory;
+    private ColorLogicHistory history;
 
     public ColorLogicPresenter(ColorLogicContract.View view) {
         this.view = view;
         attemptColors = new ColorLogicItem();
         secretColors = new ColorLogicItem();
-        //itemsOfGameHistory = new ArrayList<ColorLogicHistoryItem>();
 
         history = ColorLogicHistory.getHistoryInstance();
     }
 
     @Override
-    public void setSecretColors(int[] baseColors, int numberOfColors, boolean isDuplecationAllowed) {
+    public void setSecretColors(int[] baseColors, int numberOfColors, boolean isDuplicationAllowed) {
         Random r = new Random();
         int nextRandom, randomColor;
         int[] colors = new int[4];
@@ -31,7 +28,7 @@ public class ColorLogicPresenter implements ColorLogicContract.Presenter {
         for (int i = 0; i < 4; i++) {
             nextRandom = r.nextInt(numberOfColors);
             randomColor = baseColors[nextRandom];
-            if (!isDuplecationAllowed)
+            if (!isDuplicationAllowed)
                 while (isInArray(colors, randomColor)) {
                     nextRandom = r.nextInt(numberOfColors);
                     randomColor = baseColors[nextRandom];
@@ -64,7 +61,7 @@ public class ColorLogicPresenter implements ColorLogicContract.Presenter {
         colBull = secretColors.countBulls(attemptColors);
         Log.i("counted bulls: ", String.valueOf(colBull));
 
-        colCow = secretColors.countCowsD(attemptColors);
+        colCow = secretColors.countCows(attemptColors);
         Log.i("counted cows:", String.valueOf(colCow));
 
         addAttemptInGameHistory(attemptColors, colBull, colCow);
@@ -74,7 +71,6 @@ public class ColorLogicPresenter implements ColorLogicContract.Presenter {
 
     private void addAttemptInGameHistory(ColorLogicItem attemptColors, int colBull, int colCow) {
         ColorLogicHistoryItem historyItem = new ColorLogicHistoryItem(attemptColors, colBull, colCow);
-        //itemsOfGameHistory.add(historyItem);
         history.addHistoryItem(historyItem);
 
     }

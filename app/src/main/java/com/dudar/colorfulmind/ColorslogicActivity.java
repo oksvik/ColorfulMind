@@ -55,7 +55,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     static final int GAME_LEVEL_EASY = 0;
     static final int GAME_LEVEL_MIDDLE = 1;
     static final int GAME_LEVEL_HARD = 2;
-    static final int GAME_LEVEL_VERYHARD = 3;
+    static final int GAME_LEVEL_VERY_HARD = 3;
     static final int GAME_LEVEL_CRAZY = 4;
 
     static final String GAME_LEVEL_KEY = "color_logic_game_level";
@@ -143,21 +143,21 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initViews() {
-        imgBtnColor1 = (MyColorButton) findViewById(R.id.btnPickColor1);
-        imgBtnColor2 = (MyColorButton) findViewById(R.id.btnPickColor2);
-        imgBtnColor3 = (MyColorButton) findViewById(R.id.btnPickColor3);
-        imgBtnColor4 = (MyColorButton) findViewById(R.id.btnPickColor4);
+        imgBtnColor1 = findViewById(R.id.btnPickColor1);
+        imgBtnColor2 = findViewById(R.id.btnPickColor2);
+        imgBtnColor3 = findViewById(R.id.btnPickColor3);
+        imgBtnColor4 = findViewById(R.id.btnPickColor4);
 
-        listView = (ListView) findViewById(R.id.listView);
+        listView = findViewById(R.id.listView);
 
-        imgSecretColor1 = (ImageView) findViewById(R.id.imageViewSecretColor1);
-        imgSecretColor2 = (ImageView) findViewById(R.id.imageViewSecretColor2);
-        imgSecretColor3 = (ImageView) findViewById(R.id.imageViewSecretColor3);
-        imgSecretColor4 = (ImageView) findViewById(R.id.imageViewSecretColor4);
+        imgSecretColor1 = findViewById(R.id.imageViewSecretColor1);
+        imgSecretColor2 = findViewById(R.id.imageViewSecretColor2);
+        imgSecretColor3 = findViewById(R.id.imageViewSecretColor3);
+        imgSecretColor4 = findViewById(R.id.imageViewSecretColor4);
 
-        textViewAttemptNumber = (TextView) findViewById(R.id.attemptNumberTextView);
+        textViewAttemptNumber = findViewById(R.id.attemptNumberTextView);
 
-        btnApproveAttempt = (ImageButton) findViewById(R.id.btnApproveAttempt);
+        btnApproveAttempt = findViewById(R.id.btnApproveAttempt);
     }
 
     private void setListeners() {
@@ -211,7 +211,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
                 numberOfColors = ta.length();
                 ta.recycle();
                 break;
-            case GAME_LEVEL_VERYHARD:
+            case GAME_LEVEL_VERY_HARD:
                 numberOfRemainingMoves = 10;
 
                 ta = res.obtainTypedArray(R.array.logic_colors_array_big);
@@ -295,7 +295,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
             case R.id.menu_level_veryhard:
                 if (!item.isChecked()) {
                     item.setChecked(true);
-                    gameLevel = GAME_LEVEL_VERYHARD;
+                    gameLevel = GAME_LEVEL_VERY_HARD;
                     onRestartBtnClick();
                 }
                 return true;
@@ -337,7 +337,6 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void onRestartBtnClick() {
-        //Log.i("coloractivity", "in onrestart method");
         history.deleteHistory();
         itemsAdapter.notifyDataSetChanged();
 
@@ -362,7 +361,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
                 presenter.makePlayerStep(imgBtnColor1.getBgColorId(), imgBtnColor2.getBgColorId(),
                         imgBtnColor3.getBgColorId(), imgBtnColor4.getBgColorId());
             } else {
-                Snackbar mySnack = Snackbar.make(findViewById(R.id.colorLogicID), "All colors should be different", Snackbar.LENGTH_SHORT);
+                Snackbar mySnack = Snackbar.make(findViewById(R.id.colorLogicID), R.string.colors_no_duplication, Snackbar.LENGTH_SHORT);
                 mySnack.getView().setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 mySnack.show();
             }
@@ -397,20 +396,19 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
 
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.pick_color_dialog);
-        dialog.setTitle(R.string.dialog_title);
         dialog.setCancelable(true);
 
-        ImageButton dialogRedBtn = (ImageButton) dialog.findViewById(R.id.btnRedColor);
-        ImageButton dialogYellowBtn = (ImageButton) dialog.findViewById(R.id.btnYellowColor);
-        ImageButton dialogGreenBtn = (ImageButton) dialog.findViewById(R.id.btnGreenColor);
-        ImageButton dialogBlueBtn = (ImageButton) dialog.findViewById(R.id.btnBlueColor);
-        ImageButton dialogPurpleBtn = (ImageButton) dialog.findViewById(R.id.btnPurpleColor);
-        ImageButton dialogCyanBtn = (ImageButton) dialog.findViewById(R.id.btnCyanColor);
+        ImageButton dialogRedBtn = dialog.findViewById(R.id.btnRedColor);
+        ImageButton dialogYellowBtn = dialog.findViewById(R.id.btnYellowColor);
+        ImageButton dialogGreenBtn = dialog.findViewById(R.id.btnGreenColor);
+        ImageButton dialogBlueBtn = dialog.findViewById(R.id.btnBlueColor);
+        ImageButton dialogPurpleBtn = dialog.findViewById(R.id.btnPurpleColor);
+        ImageButton dialogCyanBtn = dialog.findViewById(R.id.btnCyanColor);
 
-        ImageButton dialogOrangeBtn = (ImageButton) dialog.findViewById(R.id.btnOrangeColor);
-        ImageButton dialogBrownBtn = (ImageButton) dialog.findViewById(R.id.btnBrownColor);
-        ImageButton dialogGreyBtn = (ImageButton) dialog.findViewById(R.id.btnGreyColor);
-        ImageButton dialogBlackBtn = (ImageButton) dialog.findViewById(R.id.btnBlackColor);
+        ImageButton dialogOrangeBtn = dialog.findViewById(R.id.btnOrangeColor);
+        ImageButton dialogBrownBtn = dialog.findViewById(R.id.btnBrownColor);
+        ImageButton dialogGreyBtn = dialog.findViewById(R.id.btnGreyColor);
+        ImageButton dialogBlackBtn = dialog.findViewById(R.id.btnBlackColor);
 
 
         dialogRedBtn.setOnClickListener(new View.OnClickListener() {
@@ -516,7 +514,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
                 break;
             }
             case GAME_LEVEL_HARD:
-            case GAME_LEVEL_VERYHARD: {
+            case GAME_LEVEL_VERY_HARD: {
                 dialogGreyBtn.setVisibility(View.GONE);
                 dialogBlackBtn.setVisibility(View.GONE);
                 break;
@@ -531,7 +529,6 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     private void changeDialogPosition(Dialog dialog) {
         Window dialogWindow = dialog.getWindow();
         dialogWindow.setGravity(Gravity.BOTTOM | Gravity.LEFT);
-        dialogWindow.setTitle("Choose color");
 
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
         lp.width = (int) (getResources().getDisplayMetrics().widthPixels * 0.85);
@@ -573,14 +570,12 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         imgSecretColor4.setBackgroundResource(colors.getColor4());
     }
 
-    void showGameOver(int gameoverType) {
+    void showGameOver(int gameOverType) {
 
         showSecretColours();
         btnApproveAttempt.setEnabled(false);
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this)
-                //.setView(R.layout.gameover_dialog)
-                //.setMessage("Congratulations!")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -594,18 +589,18 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
                         Toast.makeText(ColorslogicActivity.this, "No", Toast.LENGTH_SHORT).show();
                     }
                 });
-        //.create();
+
         View dialogView = getLayoutInflater().inflate(R.layout.gameover_dialog, null);
-        TextView gameoverTextView = (TextView) dialogView.findViewById(R.id.gameoverTextView);
-        ImageView gameoverImage = (ImageView) dialogView.findViewById(R.id.gameoverImageView);
-        switch (gameoverType) {
+        TextView gameOverTextView = dialogView.findViewById(R.id.gameoverTextView);
+        ImageView gameOverImage = dialogView.findViewById(R.id.gameoverImageView);
+        switch (gameOverType) {
             case GAME_OVER_WIN:
-                gameoverTextView.setText(R.string.win_text);
-                gameoverImage.setBackgroundResource(R.drawable.bull_message);
+                gameOverTextView.setText(R.string.win_text);
+                gameOverImage.setBackgroundResource(R.drawable.bull_message);
                 break;
             case GAME_OVER_LOST:
-                gameoverTextView.setText(R.string.looser_text);
-                gameoverImage.setBackgroundResource(R.drawable.cow_message);
+                gameOverTextView.setText(R.string.looser_text);
+                gameOverImage.setBackgroundResource(R.drawable.cow_message);
                 break;
         }
         //Window dialogWindow = dialog.getWindow();
@@ -656,27 +651,9 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     }
 
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        Bundle viewHierarchy = savedInstanceState.getBundle("android:viewHierarchyState");
-        if (viewHierarchy != null) {/*
-            SparseArray views = viewHierarchy.getSparseParcelableArray("android:views");
-            if (views != null) {
-                for (int i = 0; i < views.size(); i++) {
-                    Log.i("Restore method", "key -->" + views.get(i));
-                    Log.i("Restore method", "value --> " + views.valueAt(i));
-                }
-            }
-            */
-        } else {
-            Log.i("Restore method", "no view data");
-        }
-
-        super.onRestoreInstanceState(savedInstanceState);
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
         history.deleteHistory();
     }
+
 }

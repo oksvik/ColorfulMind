@@ -5,10 +5,6 @@ import android.util.AttributeSet;
 
 import com.dudar.colorfulmind.R;
 
-/**
- * Created by dudar on 19.02.2018.
- */
-
 public class MyColorButton extends android.support.v7.widget.AppCompatImageButton {
 
     private int bgColorId;

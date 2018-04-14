@@ -14,32 +14,24 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".RainbowActivity"
-            android:label="@string/rainbow"
-            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AlphabetActivity"
             android:label="@string/alphabet"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ColorslogicActivity"
+            android:configChanges="screenSize|orientation"
             android:label="@string/logic_of_colors"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".colorlogic.ColorsLogicHelpActivity"
-            android:label="@string/help"
-            />
+            android:label="@string/help" />
         <activity
             android:name=".alphabet.AlphabetHelpActivity"
             android:label="@string/help"
             android:parentActivityName=".AlphabetActivity" />
-
-
     </application>
-
 </manifest>
