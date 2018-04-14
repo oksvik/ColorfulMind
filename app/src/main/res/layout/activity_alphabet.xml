@@ -14,7 +14,7 @@
         app:layout_constraintGuide_begin="16dp" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guidelineMainDevider"
+        android:id="@+id/guidelineMainDivider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -39,11 +39,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineMainDevider"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineMainDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_rainbow" />
+        app:srcCompat="@drawable/bg_rainbow"
+        android:contentDescription="@string/desc_background"/>
 
     <ImageView
         android:id="@+id/imageViewBottomPartBG"
@@ -54,16 +55,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineMainDevider"
+        app:layout_constraintTop_toTopOf="@+id/guidelineMainDivider"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/plainframe" />
+        app:srcCompat="@drawable/plainframe"
+        android:contentDescription="@string/desc_background"/>
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="26dp"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="8dp"
+        android:background="@drawable/plainframe"
         android:dropDownSelector="@color/colorPrimaryLight"
         android:entries="@array/spinner_entries_array"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
@@ -77,6 +80,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:background="@drawable/plainframe"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView4"
@@ -92,7 +96,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
-        app:layout_constraintTop_toTopOf="@+id/guidelineMainDevider"
+        app:layout_constraintTop_toTopOf="@+id/guidelineMainDivider"
         app:layout_constraintVertical_bias="0.522"
         tools:text="rainbow" />
 
@@ -255,6 +259,16 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_arrow_drop_down"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="@+id/spinner"
+        android:contentDescription="@string/desc_background"/>
 
 
 </android.support.constraint.ConstraintLayout>
