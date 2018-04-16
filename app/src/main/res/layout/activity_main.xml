@@ -27,11 +27,12 @@
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@drawable/button_rainbow_shape"
         android:text="@string/brain_training"
-        android:background="@drawable/buttonshape"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/colors_btn"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toBottomOf="@+id/rainbow_btn" />
 
@@ -40,14 +41,14 @@
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center_horizontal"
+        android:background="@drawable/button_logic_shape"
         android:text="@string/logic_of_colors"
-        android:background="@drawable/buttonshape"
-        tools:background="@color/colorPrimary"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toBottomOf="@+id/alphabet_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/alphabet_btn"
+        tools:background="@color/colorPrimary" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline9"

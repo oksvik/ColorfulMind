@@ -56,4 +56,7 @@
     <string name="desc_example" translatable="false">Screenshot of the game process</string>
     <string name="desc_image_btn" translatable="false">ImageButton</string>
     <string name="default_number" translatable="false">0</string>
+
+    <string name="answer_yes">Yes</string>
+    <string name="answer_no">No</string>
 </resources>

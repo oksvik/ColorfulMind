@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -20,15 +20,18 @@
         <activity
             android:name=".AlphabetActivity"
             android:label="@string/alphabet"
+            android:screenOrientation="sensorPortrait"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ColorslogicActivity"
             android:configChanges="screenSize|orientation"
+            android:screenOrientation="sensorPortrait"
             android:label="@string/logic_of_colors"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".colorlogic.ColorsLogicHelpActivity"
-            android:label="@string/help" />
+            android:label="@string/help"
+            android:parentActivityName=".ColorslogicActivity"/>
         <activity
             android:name=".alphabet.AlphabetHelpActivity"
             android:label="@string/help"

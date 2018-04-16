@@ -25,7 +25,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.dudar.colorfulmind.colorlogic.ColorLogicAdapter;
 import com.dudar.colorfulmind.colorlogic.ColorLogicContract;
@@ -348,9 +347,18 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         imgBtnColor3.refreshColor();
         imgBtnColor4.refreshColor();
 
+        imgSecretColor1.setBackgroundResource(android.R.drawable.ic_lock_lock);
+        imgSecretColor1.setImageResource(R.drawable.plainframe);
+        imgSecretColor2.setBackgroundResource(android.R.drawable.ic_lock_lock);
+        imgSecretColor2.setImageResource(R.drawable.plainframe);
+        imgSecretColor3.setBackgroundResource(android.R.drawable.ic_lock_lock);
+        imgSecretColor3.setImageResource(R.drawable.plainframe);
+        imgSecretColor4.setBackgroundResource(android.R.drawable.ic_lock_lock);
+        imgSecretColor4.setImageResource(R.drawable.plainframe);
+
         btnApproveAttempt.setEnabled(true);
 
-        showSecretColours();
+        //showSecretColours();
     }
 
 
@@ -576,17 +584,17 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         btnApproveAttempt.setEnabled(false);
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.answer_yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(ColorslogicActivity.this, "Yes", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(ColorslogicActivity.this, "Yes", Toast.LENGTH_SHORT).show();
                         onRestartBtnClick();
                     }
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.answer_no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(ColorslogicActivity.this, "No", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(ColorslogicActivity.this, "No", Toast.LENGTH_SHORT).show();
                     }
                 });
 

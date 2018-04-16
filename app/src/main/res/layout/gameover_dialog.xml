@@ -9,17 +9,17 @@
         android:id="@+id/gameoverImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/desc_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/desc_background"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/gameoverTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/griffy"
+        android:fontFamily="@font/monotype_cursiv"
         android:textAlignment="center"
         android:textColor="@color/red1"
         android:textSize="24sp"
@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline23"
         app:layout_constraintStart_toStartOf="@+id/guideline22"
         app:layout_constraintTop_toTopOf="@+id/guideline16"
-        tools:text="Great!\n You are win!" />
+        tools:text="Круто!\n You are win!" />
 
     <TextView
         android:id="@+id/textView6"
