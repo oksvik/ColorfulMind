@@ -103,9 +103,6 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
 
         history = ColorLogicHistory.getHistoryInstance();
 
-
-        ///Delete this call later
-        //showSecretColours();
         if (savedInstanceState != null) {
             restoreState(savedInstanceState);
             presenter.copySecretColors(restoredSecretColors);
@@ -119,7 +116,6 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
 
     private void restoreState(Bundle savedInstanceState) {
 
-        //Log.i("restore state",savedInstanceState.toString());
         numberOfRemainingMoves = savedInstanceState.getInt(STATE_ITEM_REMAINING_MOVES_KEY);
         textViewAttemptNumber.setText(String.format("%d", numberOfRemainingMoves));
 
@@ -134,9 +130,7 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         }
 
         ArrayList<ColorLogicHistoryItem> recoveredHistory = savedInstanceState.getParcelableArrayList(STATE_ITEM_HISTORY_KEY);
-        Log.i("recoveredHistory", recoveredHistory.toString());
         history.copyHistory(recoveredHistory);
-        Log.i("copied history", history.getHistoryItems().toString());
         //itemsAdapter.notifyDataSetChanged();
         //listView.setSelection(listView.getAdapter().getCount() - 1);
     }
@@ -357,8 +351,6 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
         imgSecretColor4.setImageResource(R.drawable.plainframe);
 
         btnApproveAttempt.setEnabled(true);
-
-        //showSecretColours();
     }
 
 
@@ -611,8 +603,6 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
                 gameOverImage.setBackgroundResource(R.drawable.cow_message);
                 break;
         }
-        //Window dialogWindow = dialog.getWindow();
-        //dialogWindow.setGravity(Gravity.BOTTOM);
 
         dialogBuilder.setView(dialogView);
         dialogBuilder.show();
@@ -641,7 +631,6 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 
-        Log.i("save method", Integer.toString(numberOfRemainingMoves));
         outState.putInt(STATE_ITEM_REMAINING_MOVES_KEY, numberOfRemainingMoves);
         int[] secretColors = {presenter.getSecretColors().getColor1(), presenter.getSecretColors().getColor2(),
                 presenter.getSecretColors().getColor3(), presenter.getSecretColors().getColor4()};
@@ -653,7 +642,6 @@ public class ColorslogicActivity extends AppCompatActivity implements View.OnCli
 
         outState.putParcelableArrayList(STATE_ITEM_HISTORY_KEY, history.getHistoryItems());
         outState.putParcelableArrayList("my_history", history.getHistoryItems());
-        Log.i("history to save", history.getHistoryItems().toString());
 
         super.onSaveInstanceState(outState);
     }

@@ -1,7 +1,5 @@
 package com.dudar.colorfulmind.colorlogic;
 
-import android.util.Log;
-
 import java.util.Random;
 
 public class ColorLogicPresenter implements ColorLogicContract.Presenter {
@@ -36,7 +34,6 @@ public class ColorLogicPresenter implements ColorLogicContract.Presenter {
             colors[i] = randomColor;
         }
         secretColors.setColors(colors[0], colors[1], colors[2], colors[3]);
-        Log.i("secret colors", secretColors.toString());
     }
 
     private boolean isInArray(int[] colors, int randomColor) {
@@ -54,18 +51,11 @@ public class ColorLogicPresenter implements ColorLogicContract.Presenter {
         attemptColors.setColor3(color3);
         attemptColors.setColor4(color4);
 
-        Log.i("attemptColors", attemptColors.toString());
-
         int colBull, colCow;
-
         colBull = secretColors.countBulls(attemptColors);
-        Log.i("counted bulls: ", String.valueOf(colBull));
-
         colCow = secretColors.countCows(attemptColors);
-        Log.i("counted cows:", String.valueOf(colCow));
 
         addAttemptInGameHistory(attemptColors, colBull, colCow);
-
         view.updateHistoryView(colBull);
     }
 

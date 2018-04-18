@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -56,9 +55,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     String[] hands;
     String[] letters;
     int randomColor, randomName;
-    //int randomNumber;
-    //String randomHand;
-    //String randomLetter;
 
     TextView[] textViewsNumbersAndLetters;
     TextView[] textViewsRLBLetters;
@@ -84,8 +80,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
         spinnerPosition = prefs.getInt(GAME_TYPE_SPINNER_KEY, GAME_TYPE_ALPHABET);
         speedPosition = prefs.getInt(GAME_SPEED_KEY, 0);
-        Log.i("INFO: spinnerPosition", String.valueOf(spinnerPosition));
-        Log.i("INFO: speedPosition", String.valueOf(speedPosition));
         gameLanguage = prefs.getInt(GAME_LANGUAGE_KEY, GAME_LANGUAGE_ENGLISH);
 
         gameTypeSpinner.setSelection(spinnerPosition);
@@ -197,7 +191,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     Runnable scheduledTaskAlphabet = new Runnable() {
         @Override
         public void run() {
-            //Log.i("task in alphabet", "millis passed");
             handler.postDelayed(this, speedInMillisec);
             changeAlphabetLetters();
         }
@@ -217,7 +210,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     Runnable scheduledTaskNumbers = new Runnable() {
         @Override
         public void run() {
-            //Log.i("task in numbers", "millis passed");
             handler.postDelayed(this, speedInMillisec);
             changeNumbers();
         }
@@ -231,8 +223,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
 
         randomNumber = random.nextInt(MAX_NUMBER_VALUE);
         randomHand = hands[random.nextInt(hands.length)];
-        //Log.i("randon number", String.valueOf(randomNumber));
-        //Log.i("randon hand", randomHand);
 
         showLettersNumbers(String.valueOf(randomNumber),randomHand);
 
@@ -260,7 +250,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
                 scheduledTaskRainbow.run();
                 break;
         }
-        //scheduledTask.run();
     }
 
     private void stopRepeatingTask(int gameType) {
@@ -275,16 +264,12 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
                 handler.removeCallbacks(scheduledTaskRainbow);
                 break;
         }
-        //handler.removeCallbacks(scheduledTask);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
         spinnerPosition = position;
-
-        // On selecting a spinner item
-        //String item = parent.getItemAtPosition(position).toString();
 
         switch (spinnerPosition) {
             case GAME_TYPE_ALPHABET:
@@ -304,7 +289,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         stopRepeatingTask(GAME_TYPE_RAINBOW);
         startRepeatingTask(GAME_TYPE_ALPHABET);
 
-        Log.i("alphabet", "started");
         rainbowTextView.setVisibility(View.INVISIBLE);
     }
 
@@ -313,7 +297,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         stopRepeatingTask(GAME_TYPE_RAINBOW);
         startRepeatingTask(GAME_TYPE_NUMBERS);
 
-        Log.i("numbers", "started");
         rainbowTextView.setVisibility(View.INVISIBLE);
     }
 
@@ -322,7 +305,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         stopRepeatingTask(GAME_TYPE_ALPHABET);
         startRepeatingTask(GAME_TYPE_RAINBOW);
 
-        Log.i("rainbow", "started");
         rainbowTextView.setVisibility(View.VISIBLE);
     }
 
@@ -334,16 +316,12 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onProgressChanged(SeekBar seekBar, int position, boolean b) {
         speedPosition = position;
-        Log.i("Speed position", String.valueOf(speedPosition));
 
         calculateSpeedInMillisec();
-        Log.i("Speed ", String.valueOf(speedInMillisec));
     }
 
     private void calculateSpeedInMillisec() {
         double speedDouble =  (SPEED_SEEKBAR_SIZE - speedPosition) / 2.0;
-        Log.i("Speed double", String.valueOf(speedDouble));
-
         speedInMillisec = (long) (speedDouble * 1000);
     }
 
@@ -364,7 +342,6 @@ public class AlphabetActivity extends AppCompatActivity implements AdapterView.O
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt(GAME_TYPE_SPINNER_KEY, spinnerPosition);
         editor.putInt(GAME_SPEED_KEY, speedPosition);
-        Log.i("Speed position onstop", String.valueOf(speedPosition));
         editor.putInt(GAME_LANGUAGE_KEY, gameLanguage);
         editor.apply();
 

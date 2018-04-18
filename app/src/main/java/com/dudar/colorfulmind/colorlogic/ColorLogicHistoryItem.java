@@ -2,7 +2,6 @@ package com.dudar.colorfulmind.colorlogic;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.Log;
 
 public class ColorLogicHistoryItem implements Parcelable{
     private int color1, color2, color3, color4;
@@ -16,7 +15,6 @@ public class ColorLogicHistoryItem implements Parcelable{
 
         blackBull = colBull;
         whiteCow = colCow;
-        Log.i("create history item","constructor");
     }
 
     private ColorLogicHistoryItem(Parcel in){
@@ -63,7 +61,6 @@ public class ColorLogicHistoryItem implements Parcelable{
     public void writeToParcel(Parcel parcel, int flags) {
         int[] arrayToParcel = {color1,color2,color3,color4,blackBull,whiteCow};
         parcel.writeIntArray(arrayToParcel);
-        Log.i("write to parcel",arrayToParcel.toString());
     }
 
     public static final Parcelable.Creator<ColorLogicHistoryItem> CREATOR = new Parcelable.Creator<ColorLogicHistoryItem>(){
